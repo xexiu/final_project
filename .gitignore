@@ -17,6 +17,7 @@
 /tmp/*
 doc/api
 doc/app
+.c9
 *.swp
 .DS_Store
 # /config/database.yml
