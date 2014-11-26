@@ -21,3 +21,5 @@ doc/app
 *.swp
 .DS_Store
 # /config/database.yml
+# Ignore Spring files.
+/spring/*.pid
