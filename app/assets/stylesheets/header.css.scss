@@ -1,6 +1,7 @@
 @import "reset";
 @import "utility";
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+@import "form_search";
 @import "variables";
 
 * {
@@ -25,23 +26,48 @@ body {
   padding: $header-footer-pad;
   line-height: 50px;
   margin-top: 0;
+  top: 0;
+  position: relative;
   & nav {
     height: 50px;
+    width: 70%;
+    margin: 0 auto;
+    & ul li.logo {
+        background-color: #222;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        position: relative;
+        cursor: pointer;
+      & span a {
+        height: 50px;
+        margin-left: 70px;
+        line-height: 50px;
+        font-size: 1.2em;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        position: absolute;
+        display: inline-block;
+      }
+    }
   }
   & ul {
+    height: 50px;
     list-style-type: none;
     & li {
       display: inline-block;
-      margin-right: 10px;
     }
   }
 }
 
 .main-wrapper {
+  visibility: hidden;
   width: 70%;
   margin: 0 auto;
   border: 1px solid #222;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .main-footer {
@@ -50,6 +76,8 @@ body {
   padding: $header-footer-pad;
   margin-top: 5px;
   border-top: 1px solid rgba(0,0,0,.1);
+  width: 70%;
+  margin: 0 auto;
   & ul {
     margin-top: 5px;
     list-style-type: none;
