@@ -1,0 +1,28 @@
+@import "reset";
+@import "utility";
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+@import "form_search";
+@import "variables";
+@import 'header';
+@import 'footer';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100px;
+  background-image: asset-url('background-noise.png');
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  & a {
+    color: $p-link;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
