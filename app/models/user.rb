@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
   has_secure_password
+  validates :password, length: { minimum: 6 }
 end

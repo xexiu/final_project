@@ -29,6 +29,7 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.4.3)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -169,6 +170,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (= 3.1.7)
   byebug
   coffee-rails (~> 4.0.0)
   guard-minitest (= 2.3.1)
