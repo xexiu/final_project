@@ -6,43 +6,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="main-header" data-main-header="main-header" role="navigation">
-    <nav data-main-nav="main-nav" role="menubar">
-      <ul class="fl" role="menu">
-        <li class="logo"><span><%= link_to 'VotesMe', root_path %></span></li>
-        <li>
-          <form class="form-wrapper cf">
-            <input type="text" placeholder="Search here..." required>
-            <button type="submit">Search</button>
-          </form>
-        </li>
-      </ul>
-      <ul class="fr">
-        <li role="menu-item"><%= link_to 'Sign In', '#' %></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main data-main-wrapper="main-wrapper" role="main" class="main-wrapper">
+  <%= render 'layouts/header' %>
     <%= yield %>
-  </main>
-
-  <footer class="main-footer" data-main-footer="main-footer" role="navigation">
-    <nav>
-      <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
-        <li role="menu-item">&copy Copyright <%= Time.now.year %></li>
-      </ul>
-      <ul class="fr" data-main-right-nav-footer="right-nav-footer" role="menubar">
-        <li role="menu-item"><%= link_to 'TOS', '#' %></li>
-        <li role="menu-item"><%= link_to 'Contact', '#' %></li>
-        <li role="menu-item"><%= link_to 'Help', '#' %></li>
-      </ul>
-    </nav>
-  </footer>
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+  <%= render 'layouts/footer' %>
+  <%= render 'layouts/ie9_fix' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
