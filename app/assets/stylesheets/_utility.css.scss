@@ -1,0 +1,30 @@
+html, body {
+   box-sizing: border-box;
+}
+
+.fl {
+   float: left;
+}
+
+.fr {
+   float: right;
+}
+
+*, *:before, *:after {
+   box-sizing: inherit;
+}
+
+.cf:before, .cf:after {
+   content: "";
+   display: table;
+}
+
+.cf:after {
+   clear: both;
+}
+
+.vt-center {
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+}

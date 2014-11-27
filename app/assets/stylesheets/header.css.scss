@@ -1,0 +1,61 @@
+@import "reset";
+@import "utility";
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+@import "variables";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100px;
+  background-image: asset-url('background-noise.png');
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+.main-header {
+  box-shadow: 1px 1px 10px rgba(18, 238, 38, 0.1);
+  background-color: white;
+  height: 50px;
+  color: #222;
+  padding: $header-footer-pad;
+  line-height: 50px;
+  margin-top: 0;
+  & nav {
+    height: 50px;
+  }
+  & ul {
+    list-style-type: none;
+    & li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}
+
+.main-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid #222;
+  margin-top: 5px;
+}
+
+.main-footer {
+  margin-bottom: 0;
+  height: 50px;
+  padding: $header-footer-pad;
+  margin-top: 5px;
+  border-top: 1px solid rgba(0,0,0,.1);
+  & ul {
+    margin-top: 5px;
+    list-style-type: none;
+    & li {
+      display: inline-block;
+    }
+  }
+}
+

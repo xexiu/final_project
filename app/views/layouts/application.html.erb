@@ -6,25 +6,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header data-main-header="main-header" role="navigation">
+  <header class="main-header" data-main-header="main-header" role="navigation">
     <nav data-main-nav="main-nav" role="menubar">
-      <ul role="menu">
+      <ul class="fl" role="menu">
+        <li><a href="#">LOGO</a></li>
+      </ul>
+      <ul class="fr">
         <li role="menu-item">Log In</li>
       </ul>
     </nav>
   </header>
-  <main data-main-wrapper="main-wrapper" role="main">
+  <main data-main-wrapper="main-wrapper" role="main" class="main-wrapper">
     <%= yield %>
   </main>
 
-  <footer data-main-footer="main-footer">
-    <ul data-main-left-nav-footer="left-nav-footer">
-      <li>&copy Copyright</li>
+  <footer class="main-footer" data-main-footer="main-footer" role="navigation">
+    <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
+      <li role="menu-item">&copy Copyright</li>
     </ul>
-    <ul data-main-right-nav-footer="right-nav-footer">
-      <li><a href="#">TOS</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Help</a></li>
+    <ul class="fr" data-main-right-nav-footer="right-nav-footer" role="menubar">
+      <li role="menu-item"><a href="#">TOS</a></li>
+      <li role="menu-item"><a href="#">Contact</a></li>
+      <li role="menu-item"><a href="#">Help</a></li>
     </ul>
   </footer>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
