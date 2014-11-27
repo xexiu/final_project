@@ -1,22 +1,21 @@
 @import "reset";
 @import "utility";
+@import "variables";
+@import "mixins";
+@import "functions";
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 @import "form_search";
-@import "variables";
+@import "buttons";
 @import 'header';
 @import 'footer';
-
-* {
-  padding: 0;
-  margin: 0;
-}
 
 body {
   height: 100px;
   background-image: asset-url('background-noise.png');
   font-family: 'Titillium Web', sans-serif;
   font-size: 1em;
-  color: rgba(0, 0, 0, 0.7);
+  color: black(.7);
+  @include letterpress(.8);
   width: 100%;
   & a {
     color: $p-link;
@@ -25,4 +24,12 @@ body {
       text-decoration: underline;
     }
   }
+}
+
+.main-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
 }

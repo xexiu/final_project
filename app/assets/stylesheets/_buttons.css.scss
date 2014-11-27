@@ -1,0 +1,87 @@
+%btn-green {
+  background: #90c520;
+  border: 0;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1em;
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  &:hover {
+    cursor: pointer;
+    background: lighten(#90c520, 5%);
+  }
+  &:focus {
+    background: darken(#90c520, 5%);
+    box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
+  }
+}
+
+%btn-red {
+  background: #d83c3c;
+  border: 0;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1em;
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  &:hover {
+    cursor: pointer;
+    background: lighten(#d83c3c, 5%);
+  }
+  &:focus {
+    background: darken(#d83c3c, 5%);
+    box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
+  }
+}
+
+%btn-blue {
+  background: #00b7e0;
+  border: 0;
+  color: white;
+  padding: 5px 15px;
+  font-size: 1em;
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  &:hover {
+    cursor: pointer;
+    background: lighten(#00b7e0, 5%);
+  }
+  &:focus {
+    background: darken(#00b7e0, 5%);
+    box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
+  }
+}
+
+%btn-grey {
+  background: #999;
+  border: 0;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1em;
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  &:hover {
+    cursor: pointer;
+    background: lighten(#999, 5%);
+  }
+  &:focus {
+    background: darken(#999, 5%);
+    box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
+  }
+}
+
+.btn-green {
+  @extend %btn-green;
+  @include border-radius(3px);
+}
+
+.btn-red {
+  @extend %btn-red;
+  @include border-radius(3px);
+}
+
+.btn-blue {
+  @extend %btn-blue;
+  @include border-radius(3px);
+}
+
+.btn-grey {
+  @extend %btn-grey;
+  @include border-radius(3px);
+}
