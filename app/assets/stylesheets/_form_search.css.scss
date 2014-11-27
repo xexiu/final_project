@@ -1,19 +1,19 @@
 /* Form wrapper styling */
 .form-wrapper {
-    width: 550px;
+    width: 460px;
     margin-left: 150px;
-    padding-top: 5px;
-    height: 50px;
+    margin-bottom: 10px;
+    height: 30px;
 }
 
 /* Form text input */
 
 .form-wrapper input {
-    width: 440px;
-    height: 40px;
+    width: 350px;
+    height: 30px;
     padding: 10px 5px;
     float: left;
-    font-size: 1em;
+    font-size: .8em;
     border: 1px solid #ccc;
     font-style: italic;
     background: #fff;
@@ -51,9 +51,9 @@
     border: 0;
     padding: 0;
     cursor: pointer;
-    height: 40px;
+    height: 30px;
     width: 110px;
-    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    font: bold 13px/20px 'lucida sans', 'trebuchet MS', 'Tahoma';
     color: #fff;
     text-transform: uppercase;
     background: #00b7e0;
@@ -77,7 +77,7 @@
     border-width: 8px 8px 8px 0;
     border-style: solid solid solid none;
     border-color: transparent #00b7e0 transparent;
-    top: 12px;
+    top: 7px;
     left: -6px;
 }
 

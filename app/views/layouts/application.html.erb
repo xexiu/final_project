@@ -27,15 +27,21 @@
   </main>
 
   <footer class="main-footer" data-main-footer="main-footer" role="navigation">
-    <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
-      <li role="menu-item">&copy Copyright</li>
-    </ul>
-    <ul class="fr" data-main-right-nav-footer="right-nav-footer" role="menubar">
-      <li role="menu-item"><a href="#">TOS</a></li>
-      <li role="menu-item"><a href="#">Contact</a></li>
-      <li role="menu-item"><a href="#">Help</a></li>
-    </ul>
+    <nav>
+      <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
+        <li role="menu-item">&copy Copyright</li>
+      </ul>
+      <ul class="fr" data-main-right-nav-footer="right-nav-footer" role="menubar">
+        <li role="menu-item"><a href="#">TOS</a></li>
+        <li role="menu-item"><a href="#">Contact</a></li>
+        <li role="menu-item"><a href="#">Help</a></li>
+      </ul>
+    </nav>
   </footer>
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

@@ -13,14 +13,15 @@
     width: 70%;
     margin: 0 auto;
     & ul li.logo {
-        background-color: black(.8);
-        @include circle;
-        line-height: 50px;
+        background: asset-url('logo.png');
+        height: 50px;
+        width: 100px;
+        display: inline-block;
         position: relative;
         cursor: pointer;
       & span a {
         height: 50px;
-        margin-left: 70px;
+        margin-left: 90px;
         line-height: 50px;
         font-size: 1.2em;
         color: black;

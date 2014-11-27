@@ -1,11 +1,15 @@
 .main-footer {
-  margin-bottom: 0;
-  height: 50px;
+  @include absPosition(auto, auto, 0, auto);
+  height: 45px;
   padding: $header-footer-pad;
   margin-top: 5px;
   border-top: 1px solid black(.1);
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+  & nav {
+    height: 40px;
+    width: 70%;
+    margin: 0 auto;
   & ul {
     margin-top: 5px;
     list-style-type: none;
@@ -17,4 +21,5 @@
       }
     }
   }
+}
 }
