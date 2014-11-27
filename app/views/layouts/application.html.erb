@@ -9,7 +9,7 @@
   <header class="main-header" data-main-header="main-header" role="navigation">
     <nav data-main-nav="main-nav" role="menubar">
       <ul class="fl" role="menu">
-        <li class="logo"><span><a href="#">VotesMe</a></span></li>
+        <li class="logo"><span><%= link_to 'VotesMe', root_path %></span></li>
         <li>
           <form class="form-wrapper cf">
             <input type="text" placeholder="Search here..." required>
@@ -29,12 +29,12 @@
   <footer class="main-footer" data-main-footer="main-footer" role="navigation">
     <nav>
       <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
-        <li role="menu-item">&copy Copyright</li>
+        <li role="menu-item">&copy Copyright <%= Time.now.year %></li>
       </ul>
       <ul class="fr" data-main-right-nav-footer="right-nav-footer" role="menubar">
-        <li role="menu-item"><a href="#">TOS</a></li>
-        <li role="menu-item"><a href="#">Contact</a></li>
-        <li role="menu-item"><a href="#">Help</a></li>
+        <li role="menu-item"><%= link_to 'TOS', '#' %></li>
+        <li role="menu-item"><%= link_to 'Contact', '#' %></li>
+        <li role="menu-item"><%= link_to 'Help', '#' %></li>
       </ul>
     </nav>
   </footer>
