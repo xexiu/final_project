@@ -37,6 +37,14 @@
     list-style-type: none;
     & li {
       display: inline-block;
+      & a {
+        line-height: 50px;
+        display: inline-block;
+        text-decoration: none;
+        &:hover {
+          color: $bg-green;
+        }
+      }
     }
   }
 }

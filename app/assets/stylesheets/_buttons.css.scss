@@ -1,5 +1,5 @@
 %btn-green {
-  background: #90c520;
+  background: $bg-green;
   border: 0;
   color: white;
   padding: 5px 10px;
@@ -7,16 +7,16 @@
   text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
   &:hover {
     cursor: pointer;
-    background: lighten(#90c520, 5%);
+    background: lighten($bg-green, 5%);
   }
   &:focus {
-    background: darken(#90c520, 5%);
+    background: darken($bg-green, 5%);
     box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
   }
 }
 
 %btn-red {
-  background: #d83c3c;
+  background: $bg-red;
   border: 0;
   color: white;
   padding: 5px 10px;
@@ -24,16 +24,16 @@
   text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
   &:hover {
     cursor: pointer;
-    background: lighten(#d83c3c, 5%);
+    background: lighten($bg-red, 5%);
   }
   &:focus {
-    background: darken(#d83c3c, 5%);
+    background: darken($bg-red, 5%);
     box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
   }
 }
 
 %btn-blue {
-  background: #00b7e0;
+  background: $bg-blue;
   border: 0;
   color: white;
   padding: 5px 15px;
@@ -41,16 +41,16 @@
   text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
   &:hover {
     cursor: pointer;
-    background: lighten(#00b7e0, 5%);
+    background: lighten($bg-blue, 5%);
   }
   &:focus {
-    background: darken(#00b7e0, 5%);
+    background: darken($bg-blue, 5%);
     box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
   }
 }
 
 %btn-grey {
-  background: #999;
+  background: $bg-grey;
   border: 0;
   color: white;
   padding: 5px 10px;
@@ -58,10 +58,10 @@
   text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
   &:hover {
     cursor: pointer;
-    background: lighten(#999, 5%);
+    background: lighten($bg-grey, 5%);
   }
   &:focus {
-    background: darken(#999, 5%);
+    background: darken($bg-grey, 5%);
     box-shadow: inset 1px 1px 10px rgba(0,0,0,.3);
   }
 }
