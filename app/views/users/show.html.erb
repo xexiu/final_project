@@ -1,1 +1,23 @@
-<%= @user.name %>, <%= @user.email %>
+<% provide(:title, @user.name) %>
+<section data-type="profile-user" class="user-profile fr">
+  <header>
+    <h2>
+        <%= @user.name %><span><i class="fa fa-cog"></i></span>
+    </h2>
+  </header>
+  <div class="articles-wrapper">
+    <article>
+      Postives Votes
+    </article>
+    <article>
+      Negatives Votes
+    </article>
+    <article>
+      Friends
+    </article>
+  </div>
+</section>
+
+<aside data-type="profile-sidebar" class="sidebar-profile">
+  <%= gravatar_for @user %>
+</aside>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'layout_profiles'
   attr_accessor :name, :email
 
   def show

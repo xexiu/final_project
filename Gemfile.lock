@@ -53,6 +53,8 @@ GEM
     erubis (2.7.0)
     execjs (2.2.2)
     ffi (1.9.6)
+    font-awesome-sass (4.2.2)
+      sass (~> 3.2)
     formatador (0.2.5)
     guard (2.9.0)
       formatador (>= 0.2.4)
@@ -173,6 +175,7 @@ DEPENDENCIES
   bcrypt (= 3.1.7)
   byebug
   coffee-rails (~> 4.0.0)
+  font-awesome-sass
   guard-minitest (= 2.3.1)
   jbuilder (~> 2.0)
   jquery-rails

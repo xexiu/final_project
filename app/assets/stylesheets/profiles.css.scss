@@ -1,0 +1,8 @@
+section.user-profile {
+  width: 75%;
+  border: 1px solid black;
+  & header h2 {
+    font-size: 2em;
+    color: #000
+  }
+}
