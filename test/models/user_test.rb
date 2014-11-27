@@ -61,4 +61,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  # Basic User Model Test
+
 end
