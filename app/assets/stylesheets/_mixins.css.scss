@@ -160,7 +160,6 @@
 /* OPACITY */
 @mixin opacity($opacity: 0.5) {
     $opacityMultiplied: ($opacity * 100);
-
     filter:         alpha(opacity=$opacityMultiplied);
     -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
     @include css3-prefix('opacity', $opacity);
@@ -281,4 +280,15 @@
     @include size-me(60px);
     width: 100%;
     font-size: 1.3em !important;
+}
+
+.debug_dump {
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  padding: 5px;
+  clear: both;
+  float: left;
+  width: 100%;
+  @include box_sizing;
+  @include border-radius;
 }
