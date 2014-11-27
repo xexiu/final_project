@@ -3,12 +3,30 @@
 <head>
   <title><%= base_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header data-main-header="main-header" role="navigation">
+    <nav data-main-nav="main-nav" role="menubar">
+      <ul role="menu">
+        <li role="menu-item">Log In</li>
+      </ul>
+    </nav>
+  </header>
+  <main data-main-wrapper="main-wrapper" role="main">
+    <%= yield %>
+  </main>
 
-<%= yield %>
-
+  <footer data-main-footer="main-footer">
+    <ul data-main-left-nav-footer="left-nav-footer">
+      <li>&copy Copyright</li>
+    </ul>
+    <ul data-main-right-nav-footer="right-nav-footer">
+      <li><a href="#">TOS</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </footer>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
