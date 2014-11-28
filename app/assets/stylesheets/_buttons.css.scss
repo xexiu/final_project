@@ -66,6 +66,18 @@
   }
 }
 
+%budget {
+  max-height: 30px;
+  width: 30px;
+  position: absolute;
+  color: white;
+  @include border-radius;
+  font-size: .7777777em;
+  text-align: center;
+  margin-left: -30px;
+  margin-top: -15px;
+}
+
 .btn-green {
   @extend %btn-green;
   @include border-radius(3px);
