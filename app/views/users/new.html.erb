@@ -14,6 +14,5 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
 
-    <%= link_to 'Cancel', root_path, style: 'position: absolute; bottom: 10px' %>
-    <%= f.submit "Create my account" %>
+    <%= f.submit "Create my account" %><%= link_to 'Cancel', root_path, style: 'position: absolute; bottom: 10px;' %>
   <% end %>

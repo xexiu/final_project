@@ -57,3 +57,10 @@ input[type=submit] {
     font-weight: normal;
     font-style: italic;
 }
+
+.form-sign div.field_with_errors input {
+    border: 1px solid $bg-red;
+}
+div#error_explanation {
+    margin-bottom: 10px;
+}
