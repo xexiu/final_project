@@ -9,12 +9,21 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
+    <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %>
+    </div>
+  <% end %>
     <%= yield %>
   <%= debug(params) if Rails.env.development? %>
   <%= render 'layouts/footer' %>
   <%= render 'layouts/ie9_fix' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script>
+    setTimeout(function() {
+      // Do something after 7 seconds
+      $('.alert-success').fadeOut('slow');
+    }, 7000);
+
     $('#myTab a').click(function (e) {
       e.preventDefault()
       $(this).tab('show')

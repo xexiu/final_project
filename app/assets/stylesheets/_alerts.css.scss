@@ -1,0 +1,6 @@
+.alert-success {
+  padding: 20px;
+  text-align: center;
+  margin: 10px 0px;
+  @extend %btn-green;
+}
