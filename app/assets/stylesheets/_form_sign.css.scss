@@ -1,0 +1,59 @@
+/* Form wrapper styling */
+.form-sign {
+    width: 400px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+input[disabled], fieldset[disabled], input[type=checkbox] {
+    cursor: not-allowed;
+    background-color: #eee !important;
+    opacity: 1;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+  @extend %btn-green;
+}
+
+/* Form text input */
+
+.form-sign input {
+    width: 360px;
+    height: 30px;
+    padding: 10px 5px;
+    font-size: .8em;
+    border: 1px solid #ccc;
+    font-style: italic;
+    background: #fff;
+    border-radius: 3px 0 0 3px;
+    margin: 5px;
+}
+
+.form-sign input:focus {
+    outline: 0;
+    background: #fff;
+    border-color: $bg-blue;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.form-sign input::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.form-sign input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.form-sign input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
