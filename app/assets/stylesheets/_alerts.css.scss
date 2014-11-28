@@ -4,4 +4,17 @@
   margin: 10px 0px;
   cursor: default;
   @extend %btn-green;
+  &:hover {
+    cursor: default;
+  }
+}
+.alert-danger {
+  padding: 20px;
+  text-align: center;
+  margin: 10px 0px;
+  cursor: default;
+  @extend %btn-red;
+  &:hover {
+    cursor: default;
+  }
 }
