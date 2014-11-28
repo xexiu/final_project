@@ -31,5 +31,12 @@
 </section>
 
 <aside data-type="profile-sidebar" class="sidebar-profile">
-  <%= gravatar_for @user %>
+  <div><%= gravatar_for @user %></div>
+  <div class="info-user">
+    <ul>
+      <li>Location:<span class="fr">Barcelona (es)</span></li>
+      <li>Age:<span class="fr">22</span></li>
+      <li>Gender:<span class="fr">Male</span></li>
+    </ul>
+  </div>
 </aside>

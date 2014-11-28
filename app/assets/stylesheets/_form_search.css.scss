@@ -6,6 +6,12 @@
     height: 30px;
 }
 
+input[disabled], fieldset[disabled], input[type=checkbox] {
+    cursor: not-allowed;
+    background-color: #eee !important;
+    opacity: 1;
+}
+
 /* Form text input */
 
 .form-wrapper input {
@@ -23,6 +29,10 @@
 .form-wrapper input:focus {
     outline: 0;
     background: #fff;
+    border-color: $bg-blue;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 
 .form-wrapper input::-webkit-input-placeholder {

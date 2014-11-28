@@ -73,6 +73,30 @@ section.user-profile {
 
 aside.sidebar-profile {
   width: 25%;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 0px 10px;
+  & .img-thumb {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    @include border-radius;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  & div.info-user {
+    margin-top: 10px;
+    & ul li {
+      line-height: 20px;
+      font-weight: bold;
+      font-size: .9em;
+      color: black(1);
+      & span {
+        color: black(.7);
+      }
+    }
+  }
 }
