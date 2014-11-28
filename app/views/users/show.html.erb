@@ -6,13 +6,27 @@
         <span><i class="fa fa-cog"></i></span>
     </h2>
   </header>
-  <article class="articles-wrapper">
-  <ul class="nav nav-tabs cf">
-    <li role="presentation" class="active"><a href="#">Entries</a></li>
-    <li role="presentation"><a href="#">Positives Votes</a></li>
-    <li role="presentation"><a href="#">Negatives Votes</a></li>
-    <li role="presentation"><a href="#">Followers</a></li>
+  <article class="articles-wrapper" role="tabpanel">
+  <ul id="myTab" class="nav nav-tabs cf" role="tablist">
+    <li role="presentation" class="active"><a href="#entries" aria-controls="entries" role="tab" data-toggle="tab" aria-expended="true">Entries</a></li>
+    <li role="presentation"><a href="#positives" aria-controls="positives" role="tab" data-toggle="tab" aria-expended="false">Positives Votes</a></li>
+    <li role="presentation"><a href="#negatives" aria-controls="negatives" role="tab" data-toggle="tab" aria-expended="false">Negatives Votes</a></li>
+    <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab" aria-expended="false">Followers</a></li>
   </ul>
+
+  <!-- Tab panes -->
+  <div id="myTabContent" class="tab-content">
+
+    <div role="tabpanel" class="tab-pane fade in active" id="entries" aria-labelledby="entries-tab"><p>Lorem ipsum dolor sit amet.</p></div>
+
+    <div role="tabpanel" class="tab-pane fade in" id="positives" aria-labelledby="positives-tab"><p>IM A POSITIVE VOTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+
+    <div role="tabpanel" class="tab-pane fade in" id="negatives" aria-labelledby="negatives-tab"><p>IM A NEGATIVE VOTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+
+    <div role="tabpanel" class="tab-pane fade in" id="followers" aria-labelledby="followers-tab"><p>IM A FOLLLOWER Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+
+  </div>
+
   </article>
 </section>
 
