@@ -1,0 +1,24 @@
+.pagination {
+margin-top: 10px;
+margin-bottom: 10px;
+display: inline-block;
+margin: 20px 0;
+padding: 4px 0px;
+border: 1px solid black(.1);
+border-radius: 4px;
+background-color: white;
+& a {
+  padding: 0px 7px 0px 7px;
+}
+}
+
+.previous_page.disabled, .next_page.disabled {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+em.current {
+  background-color: $bg-blue;
+  color: white;
+  padding: 0px 7px 0px 7px;
+}
