@@ -5,7 +5,7 @@
     margin-bottom: 10px;
 }
 
-input[disabled], fieldset[disabled], input[type=checkbox] {
+.form-wrapper input[disabled], fieldset[disabled], input[type=checkbox][disabled] {
     cursor: not-allowed;
     background-color: #eee !important;
     opacity: 1;

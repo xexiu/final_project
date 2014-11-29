@@ -6,13 +6,19 @@
     position: relative;
 }
 
-input[disabled], fieldset[disabled], input[type=checkbox] {
+.form-sign input[disabled], fieldset[disabled], input[type=checkbox][disabled] {
     cursor: not-allowed;
     background-color: #eee !important;
     opacity: 1;
 }
 
-input[type=submit] {
+.form-sign span {
+    float: left;
+    margin-left: 30px;
+    margin-top: -28px;
+}
+
+.form-sign input[type=submit] {
   margin-top: 10px;
   @extend %btn-green;
 }
