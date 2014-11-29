@@ -4,12 +4,16 @@
 
 
 // Dropdown arrow/caret
+li.dropdown b {
+  width: 5px;
+  height: 5px;
+}
 .caret {
   display: inline-block;
   width: 0;
   height: 0;
   margin-left: 2px;
-  vertical-align: middle;
+  margin-bottom: 22px;
   border-top:   $caret-width-base solid;
   border-right: $caret-width-base solid transparent;
   border-left:  $caret-width-base solid transparent;
@@ -48,13 +52,13 @@ ul.dropdown-menu {
 
   // Links within the dropdown menu
   & li {
-    padding-left: 20px;
     height: 30px !important;
     margin-top: 2px;
     width: 100%;
     display: block !important;
     line-height: 30px;
     & a {
+      padding-left: 20px;
       line-height: 30px !important;
       margin-bottom: 2px;
       width: 100%;
@@ -89,5 +93,33 @@ ul.dropdown-menu {
   // Remove the outline when :focus is triggered
   > a {
     outline: 0;
+  }
+}
+
+// Dropdown for avatar mini
+li.dropdown {
+  height: 50px !important;
+  & a.dropdown-toggle {
+    height: 50px !important;
+    text-align: right;
+  }
+}
+li.dropdown a i {
+    display: inline-block;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+li.dropdown a > span {
+  position: relative;
+  margin-right: 35px;
+  & img {
+    position: absolute;
+    width: 30px !important;
+    height: 30px !important;
+    margin-top: 10px;
+    @include border-radius;
   }
 }
