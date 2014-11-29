@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
   layout 'layout_profiles'
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   attr_accessor :name, :email
+
+  def index
+    @users = User.all
+    @user = current_user
+  end
 
   def show
     @user = User.find(params[:id])
