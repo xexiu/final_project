@@ -12,8 +12,12 @@
 @import 'header';
 @import 'footer';
 
+html {
+  height: 100%;
+}
+
 body {
-  height: 100px;
+  min-height: 100%;
   background-image: asset-url('background-noise.png');
   font-family: 'Titillium Web', sans-serif;
   font-size: 1em;
@@ -21,6 +25,7 @@ body {
   padding-bottom: 40px;   /* Height of the footer */
   @include letterpress(.8);
   width: 100%;
+  position: relative;
   & a {
     color: $p-link;
     text-decoration: none;

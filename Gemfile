@@ -23,6 +23,7 @@ end
 gem 'rails', '4.1.8'
 gem 'bcrypt', '3.1.7'
 gem "font-awesome-rails"
+gem 'faker'
 # gem 'rails_12factor'
 # Use postgresql as the database for Active Record
 # gem 'pg'
