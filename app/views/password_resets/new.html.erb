@@ -3,7 +3,7 @@
 
     <%= form_for(:password_reset, :html => { :class => 'form-sign' }, url: password_resets_path) do |f| %>
       <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
+      <%= f.text_field :email %>
 
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= f.submit "Submit" %>
     <% end %>
