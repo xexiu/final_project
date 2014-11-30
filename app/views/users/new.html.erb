@@ -1,18 +1,7 @@
 <% provide(:title, 'Sign up') %>
 <header class="signup"><h1>Sign up</h1></header>
   <%= form_for(@user, :html => { :class => 'form-sign' }) do |f| %>
-    <%= render 'shared/error_messages' %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
+    <%= render 'fields', f: f %>
 
     <%= f.submit "Create my account" %><%= link_to 'Cancel', root_path, style: 'position: absolute; bottom: 10px;' %>
   <% end %>
