@@ -10,6 +10,7 @@
 @import "alerts";
 @import "dropdowns";
 @import "pagination";
+@import "budgets";
 @import 'header';
 @import 'footer';
 
@@ -75,6 +76,20 @@ div.gravatar_edit {
 /* Users index */
 .users li p {
   margin-top: 20px;
+}
+.delete-user {
+  & a {
+    @extend %btn-red;
+    font-size: .8em !important;
+    height: 20px !important;
+    line-height: 9px !important;
+    @include border-radius(3px);
+    margin-top: 17px;
+    margin-left: 10px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 .users {
   list-style: none;

@@ -1,0 +1,16 @@
+span.budget-e {
+        @extend %budget;
+        background-color: $bg-grey;
+      }
+      span.budget-p {
+        @extend %budget;
+        background-color: $bg-green;
+      }
+      span.budget-n {
+        @extend %budget;
+        background-color: $bg-red;
+      }
+      span.budget-f {
+        @extend %budget;
+        background-color: $bg-blue;
+      }
