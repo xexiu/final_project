@@ -18,3 +18,25 @@
     cursor: default;
   }
 }
+
+.alert-info {
+  padding: 15px;
+  text-align: center;
+  margin: 10px 0px;
+  cursor: default;
+  @extend %btn-blue;
+  &:hover {
+    cursor: default;
+  }
+}
+
+.alert-warning {
+  padding: 15px;
+  text-align: center;
+  margin: 10px 0px;
+  cursor: default;
+  @extend %btn-grey;
+  &:hover {
+    cursor: default;
+  }
+}

@@ -17,5 +17,11 @@
   <%= render 'layouts/footer' %>
   <%= render 'layouts/ie9_fix' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script>
+    setTimeout(function() {
+      // Do something after 7 seconds
+      $('.alert-info').fadeOut('slow');
+    }, 10000);
+  </script>
 </body>
 </html>
