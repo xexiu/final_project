@@ -4,7 +4,7 @@ class EntryTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     # This code is not idiomatically correct.
-    @entry = Entry.new(title: "Title of entry ", content: "Lorem ipsum", user_id: @user.id)
+    @entry = @user.entries.build(title: "Title of entry ", content: "Lorem ipsum")
   end
 
   test "should be valid" do
