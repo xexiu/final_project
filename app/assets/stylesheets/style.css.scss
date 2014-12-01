@@ -111,6 +111,23 @@ div.gravatar_edit {
 
 section.home-tabs {
   width: 100%;
+  & h5 {
+    font-size: .9em;
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+  & p.mini-desc {
+    display: inline-block;
+    height: 40px;
+    font-size: .8em;
+  }
+  & img.tab-img {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    float: left;
+    margin-right: 10px;
+  }
   & .tab-content >.tab-pane {
       display: none;
       visibility: hidden;
