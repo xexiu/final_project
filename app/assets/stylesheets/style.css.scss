@@ -112,21 +112,32 @@ div.gravatar_edit {
 section.home-tabs {
   width: 100%;
   & h5 {
-    font-size: .9em;
+    font-size: 1.2em;
     font-weight: bolder;
-    text-decoration: underline;
+  }
+  & a.tab-block {
+    width: 100%;
+    height: 75px;
+    display: block;
+    border-bottom: 1px solid black(.1);
+    margin-bottom: 5px;
+    &:hover {
+      text-decoration: none;
+    }
   }
   & p.mini-desc {
     display: inline-block;
-    height: 40px;
-    font-size: .8em;
+    height: 50px;
+    font-size: 1em;
+    color: #555;
   }
   & img.tab-img {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border: 1px solid black;
     float: left;
     margin-right: 10px;
+    @include border-radius(3px);
   }
   & .tab-content >.tab-pane {
       display: none;
