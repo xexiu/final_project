@@ -1,0 +1,7 @@
+<%= form_for(@entry, :html => { :class => 'form-sign' }) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: 'Enter a title' %>
+  <%= f.text_area :content %>
+  <%= f.submit "Post" %>
+<% end %>
