@@ -14,7 +14,14 @@ User.create!(name:  "Sergio Mironescu",
              activated: true,
              activated_at: Time.zone.now)
 
-99.times do |n|
+users = User.order(:created_at).take(6)
+50.times do
+  title= Faker::Lorem.sentence(1)
+  content = Faker::Lorem.sentence(20)
+  users.each { |user| user.entries.create!(title: title, content: content) }
+end
+
+6.times do |n|
   name  = Faker::Name.name
   email = "test#{n+1}@test.com"
   password = "foobar"

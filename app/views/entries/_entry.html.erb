@@ -1,0 +1,11 @@
+<li class="entry-<%= entry.id %>">
+<a class="tab-block-entry" href="#">
+      <img class="tab-img-entry" />
+      <h5 class="title-entry"><%= entry.title %>
+      </h5>
+      <span class="timestamp">
+        Posted <%= time_ago_in_words(entry.created_at) %> ago.
+      </span>
+      <p class="mini-desc-entry"><%= entry.content %></p>
+</a>
+</li>
