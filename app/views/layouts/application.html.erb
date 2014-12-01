@@ -23,13 +23,10 @@
       $('.alert-info').fadeOut('slow');
     }, 10000);
 
-    var module = document.getElementById("clamp-this-module");
-    var module2 = document.getElementById("clamp-this-module2");
-    var module3 = document.getElementById("clamp-this-module3");
+    $('.mini-desc').each(function(index, element) {
+    $clamp(element, { clamp: 3 });
+    });
 
-$clamp(module, {clamp: 3});
-$clamp(module2, {clamp: 3});
-$clamp(module3, {clamp: 3});
   </script>
 </body>
 </html>
