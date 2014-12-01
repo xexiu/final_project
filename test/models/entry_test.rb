@@ -4,7 +4,7 @@ class EntryTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     # This code is not idiomatically correct.
-    @entry = Entry.new(content: "Lorem ipsum", user_id: @user.id)
+    @entry = Entry.new(title: "Title of entry ", content: "Lorem ipsum", user_id: @user.id)
   end
 
   test "should be valid" do
@@ -13,6 +13,16 @@ class EntryTest < ActiveSupport::TestCase
 
   test "user id should be present" do
     @entry.user_id = nil
+    assert_not @entry.valid?
+  end
+
+  test "title should be present " do
+    @entry.title = "   "
+    assert_not @entry.valid?
+  end
+
+  test "title should be at most 55 characters " do
+    @entry.title = "a" * 56
     assert_not @entry.valid?
   end
 
