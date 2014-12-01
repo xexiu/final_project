@@ -7,12 +7,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @users = User.paginate(page: params[:page], :per_page => 20)
+    @users = User.where(activated: true).paginate(page: params[:page], :per_page => 20)
     @user = current_user
   end
 
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless true
     # debugger
   end
 
