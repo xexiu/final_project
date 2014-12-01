@@ -11,16 +11,16 @@
   <div id="myTabContent" class="tab-content">
 
     <div role="tabpanel" class="tab-pane fade in active" id="all" aria-labelledby="all-tab">
-      <a class="tab-block" href="#">
-      <img class="tab-img" />
-      <h5><%= entry.title %></h5>
-      <p class="mini-desc">Lorem ipsum dolor sit amet.</p>
-    </a>
+      <ul><%= render @entries_all %></ul>
+      <%= will_paginate @entries_all %>
     </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="random" aria-labelledby="random-tab"><p>IM A POSITIVE VOTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="random" aria-labelledby="random-tab">
+      <ul><%= render @entries_random %></ul>
+      <%= will_paginate @entries_random %>
+    </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="mvoted" aria-labelledby="mvoted-tab"><p>IM A NEGATIVE VOTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="mvoted" aria-labelledby="mvoted-tab"><p>Lorem ipsum dolor sit amet.</p></div>
 
   </div>
 

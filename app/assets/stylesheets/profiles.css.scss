@@ -13,6 +13,9 @@ section.user-profile {
   & h5.title-entry {
     font-size: 1.2em;
     font-weight: bolder;
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
   & img.tab-img-entry {
     height: 60px;

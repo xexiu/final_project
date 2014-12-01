@@ -110,37 +110,6 @@ div.gravatar_edit {
 }
 
 section.home-tabs {
-  width: 100%;
-  & h5 {
-    font-size: 1.2em;
-    font-weight: bolder;
-  }
-  & a.tab-block {
-    width: 100%;
-    height: 75px;
-    display: block;
-    border-bottom: 1px solid black(.1);
-    margin-bottom: 5px;
-    &:hover {
-      text-decoration: none;
-      background-color: white(.6);
-      padding-left: 5px;
-    }
-  }
-  & p.mini-desc {
-    display: inline-block;
-    height: 50px;
-    font-size: 1em;
-    color: #555;
-  }
-  & img.tab-img {
-    height: 60px;
-    width: 60px;
-    border: 1px solid black;
-    float: left;
-    margin-right: 10px;
-    @include border-radius(3px);
-  }
   & .tab-content >.tab-pane {
       display: none;
       visibility: hidden;
@@ -169,6 +138,7 @@ section.home-tabs {
     }
   & ul.nav-tabs-home {
     height: 40px;
+    list-style-type: none;
      & li {
       float: left;
       height: 40px;
@@ -185,3 +155,44 @@ section.home-tabs {
      }
   }
 }
+a.tab-block-entry {
+    width: 100%;
+    height: 75px;
+    display: block;
+    border-bottom: 1px solid black(.1);
+    margin-bottom: 5px;
+    &:hover {
+      padding-left: 5px;
+    }
+  }
+
+h5.title-entry {
+    font-size: 1.2em;
+    font-weight: bolder;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+img.tab-img-entry {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    float: left;
+    margin-right: 10px;
+    @include border-radius(3px);
+  }
+p.mini-desc-entry {
+    display: inline-block;
+    height: 50px;
+    font-size: 1em;
+    color: #555;
+    float: left;
+    margin-left: 70px;
+    margin-top: -40px;
+  }
+  span.timestamp {
+    font-size: .7em;
+    color: grey;
+    float: right;
+    margin-top: -10px;
+  }

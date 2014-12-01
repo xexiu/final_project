@@ -70,6 +70,10 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver
   end
 
+  def list_entry
+    Entry.all
+  end
+
   private
 
   # Converts email to all lower-case.
