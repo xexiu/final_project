@@ -36,4 +36,8 @@ class EntryTest < ActiveSupport::TestCase
     assert_not @entry.valid?
   end
 
+  test "order should be most recent first" do
+    assert_equal Entry.first, entries(:most_recent)
+  end
+
 end
