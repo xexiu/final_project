@@ -164,6 +164,7 @@ a.tab-block-entry {
     display: block;
     margin: 5px;
     border-bottom: 1px solid black(.1);
+    transition: .3s all;
     &:hover {
       margin-left: -7px;
       transition: .3s all;
