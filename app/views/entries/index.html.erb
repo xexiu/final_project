@@ -1,1 +1,22 @@
-<h1>HOLA</h1>
+<% provide(:title, 'All Entries') %>
+<header class="list"><h1>All Entries</h1></header>
+<section class="entry_form">
+  <% if logged_in? %>
+     <% @entry.each do |e| %>
+       <ul>
+         <li class="entry-<%= e.id %>">
+            <%= link_to entry_path(e.id), class: 'tab-block-entry' do %>
+              <img class="tab-img-entry" src="<%= e.img %>" />
+              <h5 class="title-entry"><%= e.title %>
+              </h5>
+              <span class="timestamp">
+                Posted <%= time_ago_in_words(e.created_at) %> ago.
+              </span>
+              <p class="mini-desc-entry"><%= e.content %></p>
+            <% end %>
+        </li>
+      </ul>
+    <% end %>
+    <%= will_paginate @entry %>
+  <% end %>
+</section>

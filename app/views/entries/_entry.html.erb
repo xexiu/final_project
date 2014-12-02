@@ -1,5 +1,5 @@
 <li class="entry-<%= entry.id %>">
-<a class="tab-block-entry" href="#">
+<%= link_to entry_path(entry.id), class: 'tab-block-entry' do %>
       <img class="tab-img-entry" src="<%= entry.img %>" />
       <h5 class="title-entry"><%= entry.title %>
       </h5>
@@ -7,5 +7,5 @@
         Posted <%= time_ago_in_words(entry.created_at) %> ago.
       </span>
       <p class="mini-desc-entry"><%= entry.content %></p>
-</a>
+<% end %>
 </li>

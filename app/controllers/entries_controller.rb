@@ -3,6 +3,12 @@ class EntriesController < ApplicationController
 
   def index
     @user = current_user
+    @entry = Entry.all.order(created_at: :desc).limit(100).paginate(page: params[:page],  :per_page => 20)
+  end
+
+  def show
+    @user = current_user
+    @entry = Entry.find(params[:id])
   end
 
   def new
@@ -15,6 +21,7 @@ def create
       flash[:success] = "Entry created!"
       redirect_to root_url
     else
+      @entry = []
       flash[:error] = "Oops! Errors found!"
       render 'static_pages/home'
     end
