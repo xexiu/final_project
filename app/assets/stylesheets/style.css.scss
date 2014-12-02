@@ -20,7 +20,7 @@ html {
 
 body {
   min-height: 100%;
-  background-image: asset-url('background-noise.png');
+  background-image: asset-url('bg-body.jpeg');
   font-family: 'Titillium Web', sans-serif;
   font-size: 1em;
   color: black(.7);
@@ -159,6 +159,7 @@ section.home-tabs {
     background-color: white;
     padding: 5px;
     margin-top: 20px;
+    border: 1px solid rgba(0,0,0,0.15);
     @include border-radius(3px);
   & li {
   margin-bottom: 5px;
