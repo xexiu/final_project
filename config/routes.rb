@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get 'signup'  => 'users#new'
+  get 'search'  => 'entries#search'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]

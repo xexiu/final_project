@@ -9,4 +9,8 @@ class Entry < ActiveRecord::Base
   validates_attachment :img,
   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
   validates_attachment_size :img, :less_than => 2.megabytes
+
+  def self.search(query)
+    where("title like ?", "%#{query}%")
+  end
 end

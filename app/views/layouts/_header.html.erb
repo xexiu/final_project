@@ -3,10 +3,10 @@
       <ul class="fl" role="menu">
         <li class="logo"><span><%= link_to 'VotesMe', root_path %></span></li>
         <li>
-          <form class="form-wrapper cf">
-            <input type="text" autofocus="true" placeholder="Search something like... coca cola" required>
-            <button type="submit">Search</button>
-          </form>
+          <%= form_tag(entries_path, :method => "get", class: "form-wrapper cf") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search anything.. coca cola?" %>
+            <%= button_tag "Search", :title => nil %>
+          <% end %>
         </li>
       </ul>
       <% if logged_in? %>

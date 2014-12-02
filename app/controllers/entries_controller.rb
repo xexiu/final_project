@@ -3,7 +3,11 @@ class EntriesController < ApplicationController
 
   def index
     @user = current_user
-    @entry = Entry.all.order(created_at: :desc).limit(100).paginate(page: params[:page],  :per_page => 20)
+    if params[:search]
+      @entries = Entry.search(params[:search]).order("created_at DESC").paginate(page: params[:page],  :per_page => 20)
+    else
+      @entries = Entry.all.order(created_at: :desc).limit(100).paginate(page: params[:page],  :per_page => 20)
+    end
   end
 
   def show
