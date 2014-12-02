@@ -4,7 +4,7 @@
         <li class="logo"><span><%= link_to 'VotesMe', root_path %></span></li>
         <li>
           <%= form_tag(entries_path, :method => "get", class: "form-wrapper cf") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search anything.. coca cola?" %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search anything.. coca cola?", autofocus: 'autofocus' %>
             <%= button_tag "Search", :title => nil %>
           <% end %>
         </li>

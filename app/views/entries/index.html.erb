@@ -1,8 +1,20 @@
+<% if params[:search] %>
+<% provide(:title, params[:search]) %>
+<aside>
+  <div style="text-align:center">
+    <p style="color: grey; margin-bottom: 20px">Don't find what you looking for? Try adding a
+    <%= link_to new_entry_path do %>
+    <button class="btn-green">New Entry</button>
+    <% end %>
+    </p>
+  </div>
+</aside>
+<% else %>
 <% provide(:title, 'All Entries') %>
 <header class="list"><h1>All Entries</h1></header>
+<% end %>
 <section class="entry_form">
 
-  <% if logged_in? %>
      <% @entries.each do |e| %>
        <ul>
          <li class="entry-<%= e.id %>">
@@ -19,5 +31,5 @@
       </ul>
     <% end %>
     <%= will_paginate @entries %>
-  <% end %>
+
 </section>
