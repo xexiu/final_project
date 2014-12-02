@@ -11,13 +11,15 @@
   <div id="myTabContent" class="tab-content">
 
     <div role="tabpanel" class="tab-pane fade in active" id="all" aria-labelledby="all-tab">
-      <ul><%= render @entries_all %></ul>
+      <ul><%= render @entries_all %>
       <%= will_paginate @entries_all %>
+      </ul>
     </div>
 
     <div role="tabpanel" class="tab-pane fade in" id="random" aria-labelledby="random-tab">
-      <ul><%= render @entries_random %></ul>
+      <ul><%= render @entries_random %>
       <%= will_paginate @entries_random %>
+      </ul>
     </div>
 
     <div role="tabpanel" class="tab-pane fade in" id="mvoted" aria-labelledby="mvoted-tab"><p>Lorem ipsum dolor sit amet.</p></div>

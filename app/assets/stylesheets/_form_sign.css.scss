@@ -23,9 +23,25 @@
   @extend %btn-green;
 }
 
+/* Form textarea */
+
+.form-sign textarea {
+    min-width: 360px;
+    max-width: 870px;
+    min-height: 200px;
+    max-height: 600px;
+    padding: 10px 5px;
+    font-size: .8em;
+    border: 1px solid #ccc;
+    font-style: italic;
+    background: #fff;
+    @include border-radius(3px);
+    margin: 5px;
+}
+
 /* Form text input */
 
-.form-sign input {
+.form-sign input, {
     width: 360px;
     height: 30px;
     padding: 10px 5px;
@@ -37,7 +53,7 @@
     margin: 5px;
 }
 
-.form-sign input:focus {
+.form-sign input:focus, .form-sign textarea:focus {
     outline: 0;
     background: #fff;
     border-color: $bg-blue;
