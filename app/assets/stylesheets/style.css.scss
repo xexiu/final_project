@@ -160,9 +160,9 @@ div.tab-content li {
 }
 a.tab-block-entry {
     width: 100%;
-    height: 75px;
+    height: 80px;
     display: block;
-    padding: 5px;
+    margin: 5px;
     border-bottom: 1px solid black(.1);
     &:hover {
       margin-left: -7px;
@@ -191,6 +191,12 @@ p.mini-desc-entry {
     color: #555;
     margin-left: 70px;
     text-decoration: none;
+    overflow: hidden;
+/* text-overflow: ellipsis; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 50px;
     &:hover {
       text-decoration: none;
     }

@@ -1,7 +1,10 @@
-<%= form_for(@entry, :html => { :class => 'form-sign' }) do |f| %>
+<%= form_for(@entry, :html => { :class => 'form-sign', :multipart => true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: 'Enter a title' %>
-  <%= f.text_area :content %>
+  <%= f.label 'Description' %> <i>(min: 300 characters, max: 600 characters)</i>
+  <%= f.text_area :content %><br />
+  <%= f.label :img %><i> (only .jpeg, .png images allowed)</i><br />
+  <%= f.file_field :img %>
   <%= f.submit "Post" %>
 <% end %>

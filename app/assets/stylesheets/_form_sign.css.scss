@@ -4,6 +4,11 @@
     margin-left: 25px;
     margin-bottom: 10px;
     position: relative;
+    & i {
+        font-style: italic;
+        color: black(.5);
+        font-size: .7em;
+    }
 }
 
 .form-sign input[disabled], fieldset[disabled], input[type=checkbox][disabled] {

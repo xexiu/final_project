@@ -21,6 +21,6 @@ def create
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :content)
+    params.require(:entry).permit(:title, :content, :img)
   end
 end
