@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <section data-type="profile-user" class="home-tabs">
 
   <article class="articles-wrapper" role="tabpanel">
@@ -31,3 +32,11 @@
 
   </article>
 </section>
+
+<% else %>
+
+  <section data-type="profile-user" class="wrapper-guest">
+    HELLO
+  </section>
+
+<% end %>
