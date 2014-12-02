@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @entries = @user.entries.paginate(page: params[:page],  :per_page => 10)
+    @entries = @user.entries.order(created_at: :desc).paginate(page: params[:page],  :per_page => 10)
     redirect_to root_url and return unless true
     # debugger
   end
