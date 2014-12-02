@@ -1,7 +1,7 @@
 .alert-success {
   padding: 15px;
   text-align: center;
-  margin: 10px 0px;
+  margin: 0px 0px 10px 0px;
   cursor: default;
   @extend %btn-green;
   &:hover {
@@ -11,7 +11,7 @@
 .alert-danger {
   padding: 15px;
   text-align: center;
-  margin: 10px 0px;
+  margin: 0px 0px 10px 0px;
   cursor: default;
   @extend %btn-red;
   &:hover {
@@ -22,7 +22,7 @@
 .alert-info {
   padding: 15px;
   text-align: center;
-  margin: 10px 0px;
+  margin: 0px 0px 10px 0px;
   cursor: default;
   @extend %btn-blue;
   &:hover {
@@ -33,7 +33,7 @@
 .alert-warning {
   padding: 15px;
   text-align: center;
-  margin: 10px 0px;
+  margin: 0px 0px 10px 0px;
   cursor: default;
   @extend %btn-grey;
   &:hover {
