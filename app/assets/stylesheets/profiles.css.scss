@@ -7,14 +7,13 @@ section.user-profile {
   margin-bottom: 5px;
   }
   & a.tab-block-entry {
-    position: relative;
     width: 100%;
     max-height: 75px;
     display: block;
     margin: 5px;
     border-bottom: 1px solid black(.1);
     &:hover {
-      margin-left: 0px;
+      margin-left: 0px !important;
       text-decoration: none;
       background-color: #f1f1f1;
     }
