@@ -115,8 +115,8 @@ section.home-tabs {
       visibility: hidden;
     }
   & .tab-content > .active {
-    margin-top: 20px;
-    margin-left: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
     display: block;
     visibility: visible;
   }
@@ -130,9 +130,9 @@ section.home-tabs {
       opacity: 1;
     }
     & ul.nav-tabs-home li.active a {
+        position: relative;
         color: #555;
         cursor: default;
-        border-bottom: 1px solid black;
         text-decoration: none;
         z-index: 100;
     }
@@ -155,8 +155,14 @@ section.home-tabs {
      }
   }
 }
-div.tab-content li {
+  div.tab-content {
+    background-color: white;
+    padding: 5px;
+    margin-top: 20px;
+    @include border-radius(3px);
+  & li {
   margin-bottom: 5px;
+  }
 }
 a.tab-block-entry {
     width: 100%;
@@ -207,7 +213,22 @@ p.mini-desc-entry {
     color: grey;
     float: right;
     margin-top: -15px;
+    margin-right: 10px;
 }
+    section.home-tabs li.active:after {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: -80%;
+          margin-top: 40px;
+          margin-bottom: 0px;
+          border-bottom: 30px solid white;
+          border-right: 30px solid transparent;
+          border-left:  30px solid transparent;
+  }
+
 section.entry-id {
   background-color: white;
   @include border-radius(3px);
