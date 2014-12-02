@@ -6,7 +6,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<% if logged_in? || current_page?(root_url) %>
+<body class="guest">
+  <% else %>
 <body>
+  <% end %>
   <%= render 'layouts/header' %>
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %>

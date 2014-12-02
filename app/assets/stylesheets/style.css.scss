@@ -18,6 +18,15 @@ html {
   height: 100%;
 }
 
+body.guest {
+  min-height: 100%;
+  background-image: asset-url('bg-body1.jpeg');
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1em;
+  color: black(.7);
+  padding-bottom: 40px;   /* Height of the footer */
+}
+
 body {
   min-height: 100%;
   background-image: asset-url('bg-body.jpeg');
