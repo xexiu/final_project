@@ -1,2 +1,16 @@
 <% provide(:title, @entry.title ) %>
-<%= @entry.id %>
+<section class="entry-id">
+  <ul>
+    <li class="entry-<%= @entry.id %>">
+      <div class="tab-block-entry-show">
+        <img class="tab-img-entry-show" src="<%= @entry.img %>" />
+        <h5 class="title-entry"><%= @entry.title %>
+        </h5>
+        <span class="timestamp-show">
+          Posted <%= time_ago_in_words(@entry.created_at) %> ago.
+        </span>
+        <p class="mini-desc-entry-show"><%= @entry.content %></p>
+      </div>
+    </li>
+  </ul>
+</section>

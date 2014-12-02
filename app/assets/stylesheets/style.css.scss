@@ -207,4 +207,34 @@ p.mini-desc-entry {
     color: grey;
     float: right;
     margin-top: -15px;
+}
+section.entry-id {
+  background-color: white;
+  @include border-radius(3px);
+  padding: 10px;
+  & div.tab-block-entry-show {
+    min-height: 200px;
+    display: block;
+    padding: 5px;
+    & h5.title-entry {
+      color: $p-link;
+      margin-bottom: 5px;
+    }
+    & img.tab-img-entry-show {
+      float: left;
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin-right: 10px;
+    }
+    & p.mini-desc-entry-show {
+
+    }
+    & span.timestamp-show {
+      font-size: .7em;
+      color: grey;
+      float: right;
+      margin-top: -25px;
+    }
   }
+}
