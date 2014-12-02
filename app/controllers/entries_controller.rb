@@ -1,6 +1,10 @@
 class EntriesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy]
 
+  def index
+    @user = current_user
+  end
+
   def new
     @user = current_user
     @entry = Entry.new
@@ -11,6 +15,7 @@ def create
       flash[:success] = "Entry created!"
       redirect_to root_url
     else
+      flash[:error] = "Oops! Errors found!"
       render 'static_pages/home'
     end
   end
