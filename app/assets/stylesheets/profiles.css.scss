@@ -2,7 +2,6 @@
 
 section.user-profile {
   width: 75%;
-  background-color: white;
   & div.tab-content li {
   margin-bottom: 5px;
   }
@@ -52,44 +51,78 @@ section.user-profile {
   }
   @include border-radius;
   & ul.nav-tabs {
-    border-bottom: 1px solid #ddd;
-    margin-top: 10px;
-    padding: 10px;
+    height: 40px;
+    list-style-type: none;
+    margin-top: 50px;
     & li {
       float: left;
-      margin-bottom: -1px;
+      height: 40px;
       position: relative;
       display: block;
-      padding: 3px;
-      margin-left: 10px;
+      padding-bottom: 20px;
       & span.budget-e {
         @extend %budget;
-        background-color: $bg-grey;
+        font-size: .7em;
+        box-shadow: inset 1px 1px 1px rgba(0,0,0,.8);
+        text-shadow: none;
+        padding: 3px 0;
+        background-color: darken($bg-grey, 20%);
       }
       & span.budget-p {
+        font-size: .7em;
+        box-shadow: inset 1px 1px 1px rgba(0,0,0,.8);
+        text-shadow: none;
+        padding: 3px 0;
         @extend %budget;
-        background-color: $bg-green;
+        background-color: darken($bg-grey, 20%);
       }
       & span.budget-n {
+        font-size: .7em;
+        box-shadow: inset 1px 1px 1px rgba(0,0,0,.8);
+        text-shadow: none;
+        padding: 3px 0;
         @extend %budget;
-        background-color: $bg-red;
+        background-color: darken($bg-grey, 20%);
       }
       & span.budget-f {
+        font-size: .7em;
+        box-shadow: inset 1px 1px 1px rgba(0,0,0,.8);
+        text-shadow: none;
+        padding: 3px 0;
         @extend %budget;
-        background-color: $bg-blue;
+        background-color: darken($bg-grey, 20%);
       }
-      &.active > a {
-        color: #555;
-        cursor: default;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-bottom-color: transparent;
-        padding: 10px;
-        @include border-radius;
+      & a {
+        display: inline-block;
+        line-height: 40px;
+        margin-left: 30px;
+        font-size: 1.2em;
         text-decoration: none;
       }
     }
     }
+    ul.nav-tabs li.active a {
+        position: relative;
+        color: #555;
+        cursor: default;
+        text-decoration: none;
+        z-index: 100;
+    }
+
+    ul.nav-tabs li.active:after {
+          content: '▲';
+          color: white;
+          position: absolute;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          font-size: 2em;
+          margin-left: -55%;
+          margin-top: 40px;
+          margin-bottom: 0px;
+          text-shadow: 0 -4px 5px black(.3);
+          transform:scale(1.5,1.0);
+  }
     & .tab-content >.tab-pane {
       display: none;
       visibility: hidden;
