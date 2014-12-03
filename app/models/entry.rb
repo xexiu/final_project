@@ -3,7 +3,7 @@ class Entry < ActiveRecord::Base
   # default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 55 }
-  validates :content, presence: true, length: { minimum: 300, maximum: 600 }
+  validates :content, presence: true, length: { minimum: 200, maximum: 600 }
 
   has_attached_file :img, :default_url => "/images/missing.png"
   validates_attachment :img,
