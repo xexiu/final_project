@@ -110,6 +110,9 @@ li.dropdown a i {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    &.admin {
+      color: $bg-red;
+    }
   }
 
 li.dropdown a > span {

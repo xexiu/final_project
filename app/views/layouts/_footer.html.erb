@@ -1,4 +1,4 @@
-<% if logged_in? || current_page?(root_url) %>
+<% if !logged_in? && current_page?(root_url) %>
 <footer class="main-footer-guest" data-main-footer="main-footer" role="navigation">
   <nav>
       <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">

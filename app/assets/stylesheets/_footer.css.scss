@@ -37,11 +37,10 @@
 
 .main-footer {
   @include absPosition(auto, 0, 0, 0);
-  background-color: #f1f1f1;
+  background-color: transparent;
   height: 45px;
   padding: $header-footer-pad;
   margin-top: 5px;
-  border-top: 1px solid black(.1);
   width: 100%;
   margin: 0 auto;
   & nav {

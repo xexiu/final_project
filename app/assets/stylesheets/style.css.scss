@@ -228,17 +228,18 @@ p.mini-desc-entry {
     margin-right: 10px;
 }
     section.home-tabs li.active:after {
-          content: '';
+          content: '▲';
+          color: white;
           position: absolute;
           display: inline-block;
-          width: 0;
-          height: 0;
-          margin-left: -68%;
+          width: 30px;
+          height: 30px;
+          font-size: 2em;
+          margin-left: -55%;
           margin-top: 40px;
           margin-bottom: 0px;
-          border-bottom: 30px solid white;
-          border-right: 30px solid transparent;
-          border-left:  30px solid transparent;
+          text-shadow: 0 -4px 5px black(.3);
+          transform:scale(1.5,1.0);
   }
 
 section.entry-id {
