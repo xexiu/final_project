@@ -7,8 +7,10 @@
         Posted <%= time_ago_in_words(entry.created_at) %> ago.
       </span>
       <p class="mini-desc-entry"><%= entry.content %></p>
+      <% if current_user.admin? %>
       <%= link_to do %>
       <span class="delete-entry" data-toggle="tooltip" data-placement="left" title="Delete this entry">x</span>
+      <% end %>
       <% end %>
 <% end %>
 </li>

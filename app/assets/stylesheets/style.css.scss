@@ -308,6 +308,7 @@ section.welcome-guest {
     background-color: $bg-red;
     @include border-radius(50%);
     display: none;
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,.6);
   }
 
   li.bind:hover > a span.delete-entry {
