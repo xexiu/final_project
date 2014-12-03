@@ -5,7 +5,7 @@ class Entry < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 55 }
   validates :content, presence: true, length: { minimum: 200, maximum: 600 }
 
-  has_attached_file :img, :default_url => "/images/missing.png"
+  has_attached_file :img, :styles => { :small  => "150x150#", :medium => "300x300#", :thumb => "100x100" }, :default_url => "/images/missing.png"
   validates_attachment :img,
   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
   validates_attachment_size :img, :less_than => 2.megabytes
