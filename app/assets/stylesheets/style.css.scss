@@ -200,7 +200,7 @@ h5.title-entry {
 img.tab-img-entry {
     height: 60px;
     width: 60px;
-    border: 1px solid black;
+    border: 1px solid black(.1);
     float: left;
     margin-right: 10px;
     @include border-radius(3px);
@@ -261,6 +261,10 @@ section.entry-id {
       width: 150px;
       height: 150px;
       margin-right: 10px;
+      background-color: #f1f1f1;
+      padding: 3px;
+      border: 1px solid black(.1);
+      @include border-radius(3px);
     }
     & p.mini-desc-entry-show {
 

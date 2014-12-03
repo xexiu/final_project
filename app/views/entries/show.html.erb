@@ -3,7 +3,7 @@
   <ul>
     <li class="entry-<%= @entry.id %>">
       <div class="tab-block-entry-show">
-        <img class="tab-img-entry-show" src="<%= @entry.img %>" />
+        <%= image_tag(@entry.img(:medium), class: 'tab-img-entry-show') %>
         <h5 class="title-entry"><%= @entry.title %>
         </h5>
         <span class="timestamp-show">
