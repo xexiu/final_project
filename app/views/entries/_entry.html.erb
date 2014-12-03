@@ -1,4 +1,4 @@
-<li class="entry-<%= entry.id %>">
+<li style="position: relative" class="entry-<%= entry.id %> bind">
 <%= link_to entry_path(entry.id), class: 'tab-block-entry' do %>
       <img class="tab-img-entry" src="<%= entry.img %>" />
       <h5 class="title-entry"><%= entry.title %>
@@ -7,5 +7,8 @@
         Posted <%= time_ago_in_words(entry.created_at) %> ago.
       </span>
       <p class="mini-desc-entry"><%= entry.content %></p>
+      <%= link_to do %>
+      <span class="delete-entry">x</span>
+      <% end %>
 <% end %>
 </li>

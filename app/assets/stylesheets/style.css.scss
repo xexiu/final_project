@@ -295,3 +295,21 @@ section.welcome-guest {
     }
   }
 }
+
+/* Delete Entry Button */
+  a span.delete-entry {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    width: 20px;
+    height: 20px;
+    background-color: $bg-red;
+    @include border-radius(50%);
+    display: none;
+  }
+
+  li.bind:hover > a span.delete-entry {
+    display: block;
+  }
