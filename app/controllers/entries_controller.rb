@@ -1,5 +1,10 @@
 class EntriesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy]
+  # Allow the current user to delete his OWN entry
+  # before_action :correct_user,   only: :destroy
+
+  # Allow admins to delete all entries
+  before_action :admin_user,     only: :destroy
 
   def index
     @user = current_user
@@ -32,11 +37,23 @@ def create
   end
 
   def destroy
+    Entry.find(params[:id]).destroy
+    flash[:success] = "Entry deleted"
+    redirect_to request.referrer || root_url
   end
 
   private
 
   def entry_params
     params.require(:entry).permit(:title, :content, :img)
+  end
+
+  # def correct_user
+      # @entry = current_user.microposts.find_by(id: params[:id])
+      # redirect_to root_url if @entry.nil?
+  # end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
   end
 end
