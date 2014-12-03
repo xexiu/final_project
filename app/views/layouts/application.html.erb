@@ -13,8 +13,7 @@
   <% end %>
   <%= render 'layouts/header' %>
   <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %>
-    </div>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
 
     <main data-main-wrapper="main-wrapper" role="main" class="main-wrapper cf">
