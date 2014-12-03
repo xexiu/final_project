@@ -1,6 +1,6 @@
 <li style="position: relative" class="entry-<%= entry.id %> bind">
 <%= link_to entry_path(entry.id), class: 'tab-block-entry' do %>
-      <img class="tab-img-entry" src="<%= entry.img(:small) %>" />
+      <%= image_tag(entry.img(:small), class: 'tab-img-entry') %>
       <h5 class="title-entry"><%= entry.title %>
       </h5>
       <span class="timestamp">

@@ -45,7 +45,7 @@ def create
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :content, :img => {:small  => "150x150#", :medium => "300x300#", :thumb => "100x100#" })
+    params.require(:entry).permit(:title, :content, :img)
   end
 
   # def correct_user
