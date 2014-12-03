@@ -33,4 +33,38 @@
   </article>
 </section>
 
+<% else %>
+
+<section class="welcome-guest">
+  <article class="fl left-note-guest">
+    <header>
+      <h1>Welcome to VotesMe.</h1>
+    </header>
+    <p class="note">
+      Vote and discuss everything that you can imagine. - Get direct feedback about what people are talking about!
+    </p>
+    <p class="feedback">
+      @john: this site is amazing. I was searching the web about.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, obcaecati.
+    </p>
+    <p class="feedback">
+      @clair: this site is amazing. I was searching the web about.... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, obcaecati.
+    </p>
+  </article>
+
+  <article class="fr">
+    <header>
+      <h1>New? Sign Up</h1>
+    </header>
+    <%= form_for(@user, :html => { :class => 'form-sign-guest' }) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.text_field :name, placeholder: 'Name' %>
+        <%= f.text_field :email, placeholder: 'Email' %>
+        <%= f.password_field :password, placeholder: 'Password' %>
+        <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+
+        <%= f.submit "Create my account" %>
+  <% end %>
+  </article>
+</section>
+
 <% end %>

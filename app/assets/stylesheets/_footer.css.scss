@@ -1,3 +1,40 @@
+.main-footer-guest {
+  @include absPosition(auto, 0, 0, 0);
+  background-color: transparent;
+  height: 45px;
+  padding: $header-footer-pad;
+  margin-top: 5px;
+  width: 100%;
+  margin: 0 auto;
+  & nav ul li a {
+    color: white;
+    text-shadow: none;
+    font-size: .9em;
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  & nav {
+    height: 40px;
+    width: 70%;
+    margin: 0 auto;
+  & ul {
+    margin-top: 5px;
+    list-style-type: none;
+    & li {
+      display: inline-block;
+      margin-right: 10px;
+      color: white;
+      text-shadow: none;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+}
+
 .main-footer {
   @include absPosition(auto, 0, 0, 0);
   background-color: #f1f1f1;

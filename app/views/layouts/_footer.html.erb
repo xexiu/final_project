@@ -1,3 +1,19 @@
+<% if logged_in? || current_page?(root_url) %>
+<footer class="main-footer-guest" data-main-footer="main-footer" role="navigation">
+  <nav>
+      <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
+        <li role="menu-item">&copy Copyright <%= Time.now.year %></li>
+      </ul>
+      <ul class="fr" data-main-right-nav-footer="right-nav-footer" role="menubar">
+        <li role="menu-item"><%= link_to 'TOS', tos_path %></li>
+        <li role="menu-item"><%= link_to 'Contact', contact_path %></li>
+        <li role="menu-item"><%= link_to 'Help', help_path %></li>
+      </ul>
+    </nav>
+</footer>
+
+<% else %>
+
 <footer class="main-footer" data-main-footer="main-footer" role="navigation">
     <nav>
       <ul class="fl" data-main-left-nav-footer="left-nav-footer" role="menubar">
@@ -10,3 +26,4 @@
       </ul>
     </nav>
 </footer>
+<% end %>

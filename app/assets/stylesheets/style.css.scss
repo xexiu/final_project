@@ -20,7 +20,9 @@ html {
 
 body.guest {
   min-height: 100%;
-  background-image: asset-url('bg-body1.jpeg');
+  background-image: asset-url('thumbs-girl.jpg');
+  background-size: cover;
+  background-position: 100% 10%;
   font-family: 'Titillium Web', sans-serif;
   font-size: 1em;
   color: black(.7);
@@ -270,4 +272,25 @@ section.entry-id {
   }
 }
 
-/* Wrapper Guest */
+/* Section Guest */
+
+section.welcome-guest {
+  color: white;
+  text-shadow: none;
+  margin-top: 50px;
+  & article.left-note-guest {
+    width: 60%;
+    & header {
+      margin-bottom: 40px;
+      font-size: 1.7em;
+    }
+    & p.note {
+      font-size: 1.5em;
+      line-height: 30px;
+      margin-bottom: 80px;
+    }
+    & p.feedback {
+      margin-top: 10px;
+    }
+  }
+}
