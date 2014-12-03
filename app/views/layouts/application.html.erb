@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<% if logged_in? || current_page?(root_url) %>
+<% if !logged_in? && current_page?(root_url) %>
 <body class="guest">
   <% else %>
 <body>
