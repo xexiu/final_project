@@ -29,7 +29,8 @@
 
     <div role="tabpanel" class="tab-pane fade in" id="mvoted" aria-labelledby="mvoted-tab">
     <ul><%= render @entries_most_voted %>
-      <%= will_paginate @entries_most_voted %>
+      <%= will_paginate @entries_most_voted
+      %>
     </ul>
     </div>
 

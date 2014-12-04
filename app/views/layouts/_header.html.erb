@@ -11,7 +11,11 @@
           <% end %>
         </li>
         <li class="fr">
-          <%= link_to '| Home', root_path, style: 'margin-left: 15px; font-size: 1.2em' %>
+          <% if !logged_in? && current_page?(root_url) %>
+          <%= link_to '| Home', root_path, style: 'margin-left: 15px; font-size: 1.2em; color: white; text-shadow: none' %>
+          <% else %>
+          <%= link_to '| Home', root_path, style: 'margin-left: 15px; font-size: 1.2em;' %>
+          <% end %>
         </li>
       </ul>
       <% if logged_in? %>
