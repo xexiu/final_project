@@ -4,6 +4,7 @@
     <li class="entry-<%= @entry.id %>">
       <div class="tab-block-entry-show">
         <%= image_tag(@entry.img(:medium), class: 'tab-img-entry-show') %>
+        <%= button_tag 'Invite Friends', class: 'btn-grey fl', style: 'margin-top: 160px; margin-left: -147px' %>
         <h5 class="title-entry"><%= @entry.title %>
         </h5>
         <span class="timestamp-show">
