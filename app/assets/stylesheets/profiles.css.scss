@@ -13,7 +13,6 @@ section.user-profile {
     &:hover {
       margin-left: 0px !important;
       text-decoration: none;
-      background-color: #f1f1f1;
     }
   }
   & h5.title-entry {
@@ -49,7 +48,6 @@ section.user-profile {
     margin-top: -15px;
   }
   aside.vote-count {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     height: 40px;
     display: block;
     line-height: 40px;
@@ -78,6 +76,12 @@ section.user-profile {
     float: right;
     width: 48%;
     margin-top: -50px;
+}
+li.bind {
+  border-bottom: 1px solid black(.1);
+  &:last-child {
+    border-bottom: none;
+  }
 }
   @include border-radius;
   & ul.nav-tabs {
