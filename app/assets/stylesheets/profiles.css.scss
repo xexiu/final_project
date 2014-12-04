@@ -10,7 +10,6 @@ section.user-profile {
     max-height: 75px;
     display: block;
     margin: 5px;
-    border-bottom: 1px solid black(.1);
     &:hover {
       margin-left: 0px !important;
       text-decoration: none;
@@ -49,6 +48,37 @@ section.user-profile {
     float: right;
     margin-top: -15px;
   }
+  aside.vote-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    position: relative;
+}
+  aside.vote-count a.vpos {
+    text-decoration: none;
+    color: #90c520;
+    font-size: 1.2em;
+    transition: .1s all;
+    display: block;
+    max-height: 50px;
+    line-height: 50px;
+    text-align: right;
+    width: 48%;
+}
+  aside.vote-count a.npos {
+    text-decoration: none;
+    color: #d83c3c;
+    font-size: 1.2em;
+    transition: .1s all;
+    display: block;
+    max-height: 50px;
+    line-height: 50px;
+    text-align: left;
+    float: right;
+    width: 48%;
+    margin-top: -50px;
+}
   @include border-radius;
   & ul.nav-tabs {
     height: 40px;

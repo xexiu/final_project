@@ -20,13 +20,37 @@ html {
 
 body.guest {
   min-height: 100%;
-  background-image: asset-url('thumbs-girl.jpg');
-  background-size: cover;
-  background-position: 100% 10%;
+
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
   font-family: 'Titillium Web', sans-serif;
   font-size: 1em;
   color: black(.7);
   padding-bottom: 40px;   /* Height of the footer */
+}
+
+body.guest:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #fff url("thumbs-girl.jpg") center center fixed no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 body {
@@ -186,14 +210,14 @@ aside.vote-count {
       text-decoration: none;
       color: $bg-green;
       font-size: 1.8em;
-      transition: .3s all;
+      transition: .1s all;
       display: block;
       max-height: 50px;
       line-height: 50px;
       text-align: right;
       width: 48%;
       &:hover {
-        transition: .3s all;
+        transition: .1s all;
         font-size: 2em;
       }
     }
@@ -201,7 +225,7 @@ aside.vote-count {
       text-decoration: none;
       color: $bg-red;
       font-size: 1.8em;
-      transition: .3s all;
+      transition: .1s all;
       display: block;
       max-height: 50px;
       line-height: 50px;
@@ -210,7 +234,7 @@ aside.vote-count {
       width: 48%;
       margin-top: -50px;
       &:hover {
-        transition: .3s all;
+        transition: .1s all;
         font-size: 2em;
       }
   }
@@ -323,6 +347,21 @@ section.entry-id {
 
 /* Section Guest */
 
+body.guest {
+    & header.main-header {
+    background-color: transparent;
+    border-bottom: none;
+    box-shadow: none;
+    & nav ul.fl li.logo a {
+      color: white;
+    }
+    & nav ul.fr li a {
+      color: white;
+      text-shadow: none;
+    }
+  }
+}
+
 section.welcome-guest {
   color: white;
   text-shadow: none;
@@ -338,8 +377,24 @@ section.welcome-guest {
       line-height: 30px;
       margin-bottom: 80px;
     }
-    & p.feedback {
-      margin-top: 10px;
+    & .show {
+      display: block;
+    }
+    & p.feedback-first {
+      padding: 10px 0px;
+      display: block;
+    }
+    & p.feedback-second {
+      padding: 10px 0px;
+      display: block;
+    }
+    & p.feedback-third {
+      padding: 10px 0px;
+      display: block;
+    }
+    & p.feedback-four {
+      padding: 10px 0px;
+      display: block;
     }
   }
 }
