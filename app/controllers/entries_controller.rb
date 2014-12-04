@@ -4,10 +4,9 @@ class EntriesController < ApplicationController
   # before_action :correct_user,   only: :destroy
 
   # Allow admins to delete all entries
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :create]
 
   def index
-    @user = current_user
     if params[:search]
       @entries = Entry.search(params[:search]).order("created_at DESC").paginate(page: params[:page],  :per_page => 20)
     else
@@ -16,24 +15,29 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @user = current_user
     @entry = Entry.find(params[:id])
   end
 
   def new
-    @user = current_user
     @entry = Entry.new
   end
+
 def create
     @entry = current_user.entries.build(entry_params)
+
+    respond_to do |format|
     if @entry.save
+      format.html { redirect_to @entry }
       flash[:success] = "Entry created!"
-      redirect_to root_url
+      format.json { render :show, status: :created, location: @entry }
+      # redirect_to root_url
     else
-      @entry = []
-      flash[:error] = "Oops! Errors found!"
-      render 'static_pages/home'
+      format.html { render :new, notice: 'Oops!! Errors found!' }
+      format.json { render json: @entry.errors }
+      # flash[:error] = "Oops! Errors found!"
+      # render 'static_pages/home'
     end
+  end
   end
 
   def destroy

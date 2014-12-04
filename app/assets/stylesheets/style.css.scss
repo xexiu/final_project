@@ -201,7 +201,6 @@ section.home-tabs {
   }
 }
 aside.vote-count {
-  border-bottom: 1px solid black(.1);
   height: 50px;
   display: block;
   line-height: 50px;
@@ -241,6 +240,12 @@ aside.vote-count {
 }
 a.tab-block-entry:first-child {
   border-top: none;
+}
+li.bind {
+  border-bottom: 1px solid black(.1);
+  &:last-child {
+    border-bottom: none;
+  }
 }
 a.tab-block-entry {
     width: 100%;
