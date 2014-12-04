@@ -42,6 +42,18 @@ def create
     redirect_to request.referrer || root_url
   end
 
+  def upvote
+    @entry = Entry.find(params[:id])
+    @entry.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @entry = Entry.find(params[:id])
+    @entry.downvote_by current_user
+    redirect_to :back
+  end
+
   private
 
   def entry_params
