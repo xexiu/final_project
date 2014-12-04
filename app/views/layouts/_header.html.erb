@@ -5,8 +5,13 @@
         <li>
           <%= form_tag(entries_path, :method => "get", class: "form-wrapper cf") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search anything.. coca cola?", autofocus: 'autofocus' %>
-            <%= button_tag "Search", :title => nil %>
+            <%= button_tag "", :title => nil do %>
+            <i class="fa fa-search"></i>
+            <% end %>
           <% end %>
+        </li>
+        <li class="fr">
+          <%= link_to '| Home', root_path, style: 'margin-left: 15px; font-size: 1.2em' %>
         </li>
       </ul>
       <% if logged_in? %>
