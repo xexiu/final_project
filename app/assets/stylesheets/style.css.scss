@@ -178,17 +178,20 @@ section.home-tabs {
 }
 aside.vote-count {
   border-bottom: 1px solid black(.1);
-  height: 45px;
-  text-align: center;
-  padding-top: 7px;
+  height: 50px;
+  display: block;
+  line-height: 50px;
+  position: relative;
   & a.vpos {
       text-decoration: none;
       color: $bg-green;
       font-size: 1.8em;
       transition: .3s all;
       display: block;
-      height: 40px;
-      margin-right: 20px;
+      max-height: 50px;
+      line-height: 50px;
+      text-align: right;
+      width: 48%;
       &:hover {
         transition: .3s all;
         font-size: 2em;
@@ -200,9 +203,12 @@ aside.vote-count {
       font-size: 1.8em;
       transition: .3s all;
       display: block;
-      height: 40px;
-      margin-left: 140px;
-      margin-top: -40px;
+      max-height: 50px;
+      line-height: 50px;
+      text-align: left;
+      float: right;
+      width: 48%;
+      margin-top: -50px;
       &:hover {
         transition: .3s all;
         font-size: 2em;
