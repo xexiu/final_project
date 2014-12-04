@@ -204,6 +204,7 @@ li.bind {
 aside.sidebar-profile {
   width: 25%;
   padding: 0px 10px;
+  margin-right: 10px;
   & .img-thumb {
     display: inline-block;
     max-width: 100%;
@@ -212,6 +213,7 @@ aside.sidebar-profile {
     line-height: 1.42857143;
     background-color: #fff;
     border: 1px solid #ddd;
+    margin-left: 20px;
     @include border-radius;
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
