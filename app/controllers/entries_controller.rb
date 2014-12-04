@@ -52,13 +52,21 @@ def create
 
   def upvote
     @entry = Entry.find(params[:id])
-    @entry.upvote_by current_user
+    unless current_user.voted_for? @entry
+      @entry.vote_total += 1
+      @entry.save
+      @entry.upvote_by current_user
+    end
     redirect_to :back
   end
 
   def downvote
     @entry = Entry.find(params[:id])
-    @entry.downvote_by current_user
+    unless current_user.voted_for? @entry
+      @entry.vote_total = @entry.vote_total + 1
+      @entry.save
+      @entry.downvote_by current_user
+    end
     redirect_to :back
   end
 

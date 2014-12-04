@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204022446) do
+ActiveRecord::Schema.define(version: 20141204174218) do
 
   create_table "entries", force: true do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141204022446) do
     t.string   "img_content_type"
     t.integer  "img_file_size"
     t.datetime "img_updated_at"
+    t.integer  "vote_total",       default: 0
   end
 
   add_index "entries", ["user_id", "created_at"], name: "index_entries_on_user_id_and_created_at"

@@ -15,9 +15,9 @@ User.create!(name:  "Sergio Mironescu",
              activated_at: Time.zone.now)
 
 users = User.order(:created_at).take(6)
-50.times do
+10.times do
   title= Faker::Lorem.sentence(1)
-  content = Faker::Lorem.sentence(20)
+  content = Faker::Lorem.sentence(40)
   users.each { |user| user.entries.create!(title: title, content: content) }
 end
 

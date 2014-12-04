@@ -27,9 +27,17 @@
       </ul>
     </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="mvoted" aria-labelledby="mvoted-tab"><p>Lorem ipsum dolor sit amet.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="mvoted" aria-labelledby="mvoted-tab">
+    <ul><%= render @entries_most_voted %>
+      <%= will_paginate @entries_most_voted %>
+    </ul>
+    </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="owne" aria-labelledby="owne-tab"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, necessitatibus.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="owne" aria-labelledby="owne-tab">
+      <ul><%= render @entries_own %>
+      <%= will_paginate @entries_own %>
+      </ul>
+    </div>
 
   </div>
 
