@@ -324,6 +324,7 @@ section.entry-id {
     min-height: 200px;
     display: block;
     padding: 5px;
+    position: relative;
     & h5.title-entry {
       color: $p-link;
       margin-bottom: 5px;
@@ -406,7 +407,7 @@ section.welcome-guest {
 }
 
 /* Delete Entry Button */
-  a span.delete-entry {
+  a span.delete-entry, a span.delete-entry-id {
     position: absolute;
     top: 0;
     right: 0;
@@ -420,6 +421,10 @@ section.welcome-guest {
   }
 
   li.bind:hover > a span.delete-entry {
+    display: block;
+  }
+
+  li.bind:hover > div.tab-block-entry-show a span.delete-entry-id {
     display: block;
   }
 

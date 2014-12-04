@@ -1,7 +1,7 @@
 <% provide(:title, @entry.title ) %>
 <section class="entry-id">
   <ul>
-    <li class="entry-<%= @entry.id %>">
+    <li class="bind entry-<%= @entry.id %>">
       <div class="tab-block-entry-show">
         <%= image_tag(@entry.img(:medium), class: 'tab-img-entry-show') %>
         <%= button_tag 'Invite Friends', class: 'btn-grey fl', style: 'margin-top: 160px; margin-left: -147px' %>
@@ -11,6 +11,11 @@
           Posted <%= time_ago_in_words(@entry.created_at) %> ago.
         </span>
         <p class="mini-desc-entry-show"><%= @entry.content %></p>
+         <% if current_user.admin? %>
+        <%= link_to @entry, method: :delete do %>
+        <span class="delete-entry-id" data-toggle="tooltip" data-placement="left" title="Delete this entry">x</span>
+        <% end %>
+      <% end %>
       </div>
     </li>
   </ul>

@@ -43,7 +43,11 @@ def create
   def destroy
     Entry.find(params[:id]).destroy
     flash[:success] = "Entry deleted"
-    redirect_to request.referrer || root_url
+    if entry_path
+      redirect_to root_url
+    else
+      redirect_to request.referrer || root_url
+    end
   end
 
   def upvote
