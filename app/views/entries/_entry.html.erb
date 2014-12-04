@@ -13,8 +13,8 @@
         <% end %>
       <% end %>
 <% end %>
-<aside class="vote-count">
-  <%= link_to like_entry_path(entry), method: :put, class: 'vpos' do %>
+<aside class="vote-count bind-<%= entry.id %>">
+  <%= link_to like_entry_path(entry), :remote => true, method: :put, class: 'vpos' do %>
   <i class="fa fa-thumbs-up"></i>
   <%= entry.get_upvotes.size %>
   <% end %>

@@ -53,7 +53,7 @@ def create
   def upvote
     @entry = Entry.find(params[:id])
     unless current_user.voted_for? @entry
-      @entry.vote_total += 1
+      @entry.vote_total = @entry.vote_total + 1
       @entry.save
       @entry.upvote_by current_user
     end
@@ -66,6 +66,8 @@ def create
       @entry.vote_total = @entry.vote_total + 1
       @entry.save
       @entry.downvote_by current_user
+    else
+      flash[:danger] = 'Sorry!! You had allready voted this entry!'
     end
     redirect_to :back
   end
