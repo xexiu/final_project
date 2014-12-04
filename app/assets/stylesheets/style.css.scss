@@ -317,6 +317,7 @@ p.mini-desc-entry {
 
 section.entry-id {
   background-color: white;
+  border: 1px solid rgba(0,0,0,0.15);
   @include border-radius(3px);
   padding: 10px;
   & div.tab-block-entry-show {
