@@ -22,22 +22,15 @@ class EntriesController < ApplicationController
     @entry = Entry.new
   end
 
-def create
+  def create
     @entry = current_user.entries.build(entry_params)
-
-    respond_to do |format|
     if @entry.save
-      format.html { redirect_to @entry }
       flash[:success] = "Entry created!"
-      format.json { render :show, status: :created, location: @entry }
-      # redirect_to root_url
+      redirect_to @entry
     else
-      format.html { render :new, notice: 'Oops!! Errors found!' }
-      format.json { render json: @entry.errors }
-      # flash[:error] = "Oops! Errors found!"
-      # render 'static_pages/home'
+      flash[:error] = "Oops! Errors found!"
+      render 'static_pages/home'
     end
-  end
   end
 
   def destroy

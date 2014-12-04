@@ -11,7 +11,7 @@
           Posted <%= time_ago_in_words(@entry.created_at) %> ago.
         </span>
         <p class="mini-desc-entry-show"><%= @entry.content %></p>
-         <% if current_user.admin? %>
+         <% if current_user && current_user.admin? %>
         <%= link_to @entry, method: :delete do %>
         <span class="delete-entry-id" data-toggle="tooltip" data-placement="left" title="Delete this entry">x</span>
         <% end %>
