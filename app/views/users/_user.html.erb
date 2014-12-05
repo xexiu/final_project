@@ -1,9 +1,9 @@
-    <li>
+    <li id="bind-<%= user.id %>">
       <%= gravatar_for user, size: 50 %>
       <%= link_to user.name, user %>
       <span class="delete-user">
       <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "delete", user, method: :delete %>
+      <%= link_to "delete", user, :remote => true, method: :delete, class: 'delete-user' %>
       <% end %>
       </span>
       <p class="fr"><%= user.email %></p>
