@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       log_in @user
       flash[:success] = "Welcome #{@user.name}, to VotesMe!"
       # redirect_to @user
-      redirect_to :back
+      redirect_to root_url
     else
       render 'new'
     end
