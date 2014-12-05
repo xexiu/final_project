@@ -8,7 +8,7 @@
       </span>
       <p class="mini-desc-entry"><%= entry.content %></p>
       <% if current_user.admin? %>
-        <%= link_to entry, method: :delete do %>
+        <%= link_to entry, :remote => true, method: :delete, class: 'delete-entry' do %>
         <span class="delete-entry" data-toggle="tooltip" data-placement="left" title="Delete this entry">x</span>
         <% end %>
       <% end %>

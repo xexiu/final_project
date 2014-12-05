@@ -41,11 +41,17 @@ def create
 
   def destroy
     Entry.find(params[:id]).destroy
-    flash[:success] = "Entry deleted"
-    if entry_path
-      redirect_to root_url
-    else
-      redirect_to request.referrer || root_url
+    # flash[:success] = "Entry deleted"
+    respond_to do |format|
+      format.html {
+        if entry_path
+          redirect_to root_url
+        else
+          redirect_to request.referrer || root_url
+        end
+      }
+      format.json { head :no_content }
+      format.js   { render :layout => false }
     end
   end
 
