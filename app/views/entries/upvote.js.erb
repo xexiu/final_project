@@ -1,0 +1,3 @@
+$('.vpos').bind('ajax:success', function() {
+        $(this).html('<%= @entry.get_upvotes.size %>');
+});
