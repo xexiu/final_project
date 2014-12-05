@@ -2,10 +2,10 @@ class StaticPagesController < ApplicationController
   def home
     @user = current_user
     @user = User.new unless logged_in?
-    @entries_all = Entry.all.order(created_at: :desc).limit(100).paginate(page: params[:page],  :per_page => 5)
-    @entries_random = Entry.order("RANDOM()").limit(100).paginate(page: params[:page],  :per_page => 5)
+    @entries_all = Entry.all.order(created_at: :desc).limit(100).paginate(page: params[:page],  :per_page => 10)
+    @entries_random = Entry.order("RANDOM()").limit(100).paginate(page: params[:page],  :per_page => 10)
 
-    @entries_most_voted = Entry.all.order("vote_total DESC").limit(100).paginate(page: params[:page],  :per_page => 5)
+    @entries_most_voted = Entry.all.order("vote_total DESC").limit(100).paginate(page: params[:page],  :per_page => 10)
 
      @entries_own = @user.entries.order(created_at: :desc).paginate(page: params[:page],  :per_page => 10)
 
