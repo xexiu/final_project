@@ -9,8 +9,8 @@
   <article role="tabpanel">
   <ul id="myTab" class="nav nav-tabs cf" role="tablist">
     <li role="presentation" class="active"><a href="#entries" aria-controls="entries" role="tab" data-toggle="tab" aria-expended="true">My Entries</a><span class="budget-e"><%= @user.entries.count %></span></li>
-    <li role="presentation"><a href="#positives" aria-controls="positives" role="tab" data-toggle="tab" aria-expended="false">Positives Votes</a><span class="budget-p">121</span></li>
-    <li role="presentation"><a href="#negatives" aria-controls="negatives" role="tab" data-toggle="tab" aria-expended="false">Negatives Votes</a><span class="budget-n">17</span></li>
+    <li role="presentation"><a href="#positives" aria-controls="positives" role="tab" data-toggle="tab" aria-expended="false">Positives Votes</a><span class="budget-p"><%= @user.find_up_voted_items.size %></span></li>
+    <li role="presentation"><a href="#negatives" aria-controls="negatives" role="tab" data-toggle="tab" aria-expended="false">Negatives Votes</a><span class="budget-n"><%= @user.find_down_voted_items.size %></span></li>
     <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab" aria-expended="false">Followers</a><span class="budget-f">3</span></li>
   </ul>
 
@@ -25,9 +25,17 @@
       <%= will_paginate @entries %>
     </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="positives" aria-labelledby="positives-tab"><p>IM A POSITIVE VOTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="positives" aria-labelledby="positives-tab">
+      <ul>
+        <%= render @entries_pos %>
+      </ul>
+    </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="negatives" aria-labelledby="negatives-tab"><p>IM A NEGATIVE VOTE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="negatives" aria-labelledby="negatives-tab">
+      <ul>
+        <%= render @entries_neg %>
+      </ul>
+    </div>
 
     <div role="tabpanel" class="tab-pane fade in" id="followers" aria-labelledby="followers-tab"><p>IM A FOLLLOWER Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
 

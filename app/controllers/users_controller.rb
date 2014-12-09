@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @entries_pos = @user.find_up_voted_items
+    @entries_neg = @user.find_down_voted_items
     @entries = @user.entries.order(created_at: :desc).paginate(page: params[:page],  :per_page => 10)
     redirect_to root_url and return unless true
     # debugger
