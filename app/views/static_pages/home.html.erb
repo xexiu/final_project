@@ -7,6 +7,7 @@
     <li role="presentation"><a href="#random" aria-controls="random" role="tab" data-toggle="tab" aria-expended="false">Random</a></li>
     <li role="presentation"><a href="#mvoted" aria-controls="mvoted" role="tab" data-toggle="tab" aria-expended="false">Most Voted</a></li>
     <li role="presentation"><a href="#owne" aria-controls="owne" role="tab" data-toggle="tab" aria-expended="false">Own Entries</a></li>
+    <li role="presentation"><a href="#feed" aria-controls="feed" role="tab" data-toggle="tab" aria-expended="false">Feed</a></li>
     <%= link_to new_entry_path, class: 'fr', style: 'margin-left: 20px; margin-top: 10px' do %>
     <button class="btn-green">New Entry</button>
     <% end %>
@@ -37,6 +38,12 @@
     <div role="tabpanel" class="tab-pane fade in" id="owne" aria-labelledby="owne-tab">
       <ul><%= render @entries_own %>
       <%= will_paginate @entries_own %>
+      </ul>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade in" id="feed" aria-labelledby="feed-tab">
+      <ul>
+        <%= render @feed_items %>
       </ul>
     </div>
 
