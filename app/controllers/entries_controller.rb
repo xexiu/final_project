@@ -27,7 +27,7 @@ class EntriesController < ApplicationController
       redirect_to @entry
       flash[:success] = "Entry created!"
     else
-      render 'static_pages/home'
+      render 'new'
       flash[:error] = "Oops! Errors found!"
     end
   end
