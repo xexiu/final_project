@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @users = User.where(activated: true).paginate(page: params[:page], :per_page => 5)
+    @users = User.where(activated: true).paginate(page: params[:page], :per_page => 10)
     @user = current_user
   end
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page], :per_page => 10)
     @entries_pos = @user.find_up_voted_items
     @entries_neg = @user.find_down_voted_items
-    @entries = @user.entries.order(created_at: :desc).paginate(page: params[:page], :per_page => 5)
+    @entries = @user.entries.order(created_at: :desc).paginate(page: params[:page], :per_page => 10)
     redirect_to root_url and return unless true
     # debugger
   end
@@ -47,7 +47,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      # Handle a successful update.
       flash[:success] = "Profile updated"
       redirect_to @user
     else
@@ -85,8 +84,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
   end
-
-  # Before filters
 
   # Confirms the correct user.
   def correct_user
