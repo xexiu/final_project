@@ -1,4 +1,1 @@
-$('.delete-entry').bind('ajax:success', function() {
-        $(this).closest('li').fadeOut();
-});
 $("#notice").html("<%= escape_javascript(render :partial => 'layouts/flash' , :locals => { :flash => flash }).html_safe %>");

@@ -12,9 +12,9 @@
 <body>
   <% end %>
   <%= render 'layouts/header' %>
-  <% flash.each do |message_type, message| %>
-    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-  <% end %>
+  <div id="notice">
+  <%= render :partial => 'layouts/flash' , :locals => { :flash => flash } %>
+  </div>
 
     <main data-main-wrapper="main-wrapper" role="main" class="main-wrapper cf">
 
@@ -24,13 +24,13 @@
   <%= render 'layouts/footer' %>
   <%= render 'layouts/ie9_fix' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <style>
+    #notice {
+      display: block;
+    }
+  </style>
   <script>
-
-    setTimeout(function() {
-      // Do something after 10 seconds
-      $('.alert-info, .alert-success, .alert-danger').fadeOut('slow');
-    }, 10000);
-
+    $(".alert-success").delay(5000).fadeOut("slow");
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     })

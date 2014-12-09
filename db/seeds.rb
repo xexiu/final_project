@@ -21,7 +21,7 @@ users = User.order(:created_at).take(6)
   users.each { |user| user.entries.create!(title: title, content: content) }
 end
 
-16.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   email = "test#{n+1}@test.com"
   password = "foobar"

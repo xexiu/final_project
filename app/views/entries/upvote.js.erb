@@ -1,3 +1,4 @@
 $('.vpos').bind('ajax:success', function() {
-        $(this).html('<%= @entry.get_upvotes.size %>');
+$('.vcount-<%= @entry.id %>').html('<%=escape_javascript @entry.vote_total.to_s %>');
 });
+$("#notice").html("<%= escape_javascript(render :partial => 'layouts/flash' , :locals => { :flash => flash }).html_safe %>");

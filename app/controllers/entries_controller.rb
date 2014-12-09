@@ -21,22 +21,15 @@ class EntriesController < ApplicationController
     @entry = Entry.new
   end
 
-def create
+  def create
     @entry = current_user.entries.build(entry_params)
-
-    respond_to do |format|
     if @entry.save
-      format.html { redirect_to @entry }
+      redirect_to @entry
       flash[:success] = "Entry created!"
-      format.json { render :show, status: :created, location: @entry }
-      # redirect_to root_url
     else
-      format.html { render :new, notice: 'Oops!! Errors found!' }
-      format.json { render json: @entry.errors }
-      # flash[:error] = "Oops! Errors found!"
-      # render 'static_pages/home'
+      render 'static_pages/home'
+      flash[:error] = "Oops! Errors found!"
     end
-  end
   end
 
   def destroy
@@ -50,33 +43,49 @@ def create
           redirect_to request.referrer || root_url
         end
       }
+      flash[:success] = "Entry successful deleted"
+      format.html { redirect_to :back }
       format.json { head :no_content }
-      format.js   { render :layout => false }
+      format.js
     end
   end
 
   def upvote
     @entry = Entry.find(params[:id])
-    unless current_user.voted_for? @entry
-      @entry.vote_total = @entry.vote_total + 1
-      @entry.save
-      @entry.upvote_by current_user
-    else
-      flash[:danger] = 'Sorry!! You had allready voted this entry!'
+    respond_to do |format|
+      unless current_user.voted_for? @entry
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js { render :layout => false }
+        @entry.vote_total = @entry.vote_total + 1
+        @entry.save
+        @entry.upvote_by current_user
+      else
+        flash[:danger] = 'You allready voted this entry'
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js
+      end
     end
-    redirect_to :back
   end
 
   def downvote
     @entry = Entry.find(params[:id])
-    unless current_user.voted_for? @entry
-      @entry.vote_total = @entry.vote_total + 1
-      @entry.save
-      @entry.downvote_by current_user
-    else
-      flash[:danger] = 'Sorry!! You had allready voted this entry!'
+    respond_to do |format|
+      unless current_user.voted_for? @entry
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js { render :layout => false }
+        @entry.vote_total = @entry.vote_total + 1
+        @entry.save
+        @entry.downvote_by current_user
+      else
+        flash[:danger] = 'You allready voted this entry'
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+        format.js
+      end
     end
-    redirect_to :back
   end
 
   private

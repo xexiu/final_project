@@ -1,0 +1,4 @@
+$('.npos').bind('ajax:success', function() {
+$('.ncount-<%= @entry.id %>').html('<%=escape_javascript @entry.vote_total.to_s %>');
+});
+$("#notice").html("<%= escape_javascript(render :partial => 'layouts/flash' , :locals => { :flash => flash }).html_safe %>");
