@@ -78,6 +78,7 @@ section.user-profile {
     margin-top: -50px;
 }
 li.bind {
+  list-style-type: none;
   border-bottom: 1px solid black(.1);
   &:last-child {
     border-bottom: none;

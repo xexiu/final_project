@@ -1,0 +1,13 @@
+<% provide(:title, @title) %>
+    <section class="user_info">
+      <h1><%= @user.name %></h1>
+    </section>
+  </aside>
+    <% if @users.any? %>
+    <%= will_paginate @users, previous_label: 'Prev',  next_label: 'Next', page_links: true %>
+      <ul class="users follow">
+        <h3><%= @title %></h3>
+        <%= render @users %>
+      </ul>
+      <%= will_paginate @users, previous_label: 'Prev',  next_label: 'Next', page_links: true %>
+    <% end %>

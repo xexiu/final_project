@@ -13,10 +13,17 @@ User.create!(name:  "Sergio Mironescu",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
+User.create!(name:  "Test",
+             email: "test@test.com",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin: false,
+             activated: true,
+             activated_at: Time.zone.now)
 
 users = User.order(:created_at).take(6)
 20.times do
-  title= Faker::Lorem.sentence(1)
+  title= Faker::Name.title
   content = Faker::Lorem.sentence(40)
   users.each { |user| user.entries.create!(title: title, content: content) }
 end
@@ -32,3 +39,11 @@ end
                activated: true,
                activated_at: Time.zone.now)
 end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

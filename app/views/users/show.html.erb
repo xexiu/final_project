@@ -3,26 +3,29 @@
   <header>
     <h2>
         <%= @user.name %>
-        <span><i class="fa fa-cog"></i></span>
+        <span>
+          <%= render 'follow_form' if logged_in? %>
+          </span>
     </h2>
   </header>
   <article role="tabpanel">
   <ul id="myTab" class="nav nav-tabs cf" role="tablist">
     <li role="presentation" class="active"><a href="#entries" aria-controls="entries" role="tab" data-toggle="tab" aria-expended="true">My Entries</a><span class="budget-e"><%= @user.entries.count %></span></li>
-    <li role="presentation"><a href="#positives" aria-controls="positives" role="tab" data-toggle="tab" aria-expended="false">Positives Votes</a><span class="budget-p"><%= @user.find_up_voted_items.size %></span></li>
-    <li role="presentation"><a href="#negatives" aria-controls="negatives" role="tab" data-toggle="tab" aria-expended="false">Negatives Votes</a><span class="budget-n"><%= @user.find_down_voted_items.size %></span></li>
-    <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab" aria-expended="false">Followers</a><span class="budget-f">3</span></li>
+    <li role="presentation"><a href="#positives" aria-controls="positives" role="tab" data-toggle="tab" aria-expended="false">Positives Votes</a><span class="budget-p"><%= @user.find_up_voted_items.count %></span></li>
+    <li role="presentation"><a href="#negatives" aria-controls="negatives" role="tab" data-toggle="tab" aria-expended="false">Negatives Votes</a><span class="budget-n"><%= @user.find_down_voted_items.count %></span></li>
+    <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab" aria-expended="false">Followers</a><span class="budget-f"><%= @user.followers.count %></span></li>
   </ul>
 
   <!-- Tab panes -->
   <div id="myTabContent" class="tab-content">
 
     <div role="tabpanel" class="tab-pane fade in active" id="entries" aria-labelledby="entries-tab">
-      <%= will_paginate @entries %>
-      <ol>
+      <div class="pag-ajax">
+        <%= will_paginate @entries, previous_label: 'Prev',  next_label: 'Next', page_links: true %>
+      <ul>
       <%= render @entries %>
-      </ol>
-      <%= will_paginate @entries %>
+      </ul>
+      </div>
     </div>
 
     <div role="tabpanel" class="tab-pane fade in" id="positives" aria-labelledby="positives-tab">
@@ -37,7 +40,12 @@
       </ul>
     </div>
 
-    <div role="tabpanel" class="tab-pane fade in" id="followers" aria-labelledby="followers-tab"><p>IM A FOLLLOWER Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, explicabo illo praesentium magni iure nostrum sint quod ab delectus iusto.</p></div>
+    <div role="tabpanel" class="tab-pane fade in" id="followers" aria-labelledby="followers-tab">
+      <ul class="users follow">
+        <h3><%= @title %></h3>
+        <%= render @users %>
+      </ul>
+    </div>
 
   </div>
 
@@ -52,5 +60,6 @@
       <li>Age:<span class="fr">22</span></li>
       <li>Gender:<span class="fr">Male</span></li>
     </ul>
+    <%= render 'shared/stats' %>
   </div>
 </aside>

@@ -14,16 +14,21 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get 'signup'  => 'users#new'
   get 'search'  => 'entries#search'
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   # get 'entries' => 'entries#index'
   resources :entries,  only: [:index, :show, :new, :create, :destroy] do
-  member do
-    put 'like', to: 'entries#upvote'
-    put 'dislike', to: 'entries#downvote'
+    member do
+      put 'like', to: 'entries#upvote'
+      put 'dislike', to: 'entries#downvote'
+    end
   end
-end
+  resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

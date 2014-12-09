@@ -1,8 +1,8 @@
 <% provide(:title, 'All users') %>
 <header class="list"><h1>All users</h1></header>
 
-<%= will_paginate @users %>
-<ul class="users">
+    <%= will_paginate @users, previous_label: 'Prev',  next_label: 'Next', page_links: true %>
+<ul class="users pag-ajax">
     <%= render @users %>
 </ul>
-<%= will_paginate @users %>
+    <%= will_paginate @users, previous_label: 'Prev',  next_label: 'Next', page_links: true %>

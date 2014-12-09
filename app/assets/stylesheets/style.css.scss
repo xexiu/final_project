@@ -242,6 +242,7 @@ a.tab-block-entry:first-child {
   border-top: none;
 }
 li.bind {
+  list-style-type: none;
   border-bottom: 1px solid black(.1);
   position: relative;
   &:last-child {

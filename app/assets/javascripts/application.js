@@ -29,9 +29,20 @@ var show_ajax_message = function(msg, type) {
     fade_flash();
 };
 
-$( document ).ajaxComplete(function(event, request) {
+$(document).ajaxComplete(function(event, request) {
     var msg = request.getResponseHeader('X-Message');
     var type = request.getResponseHeader('X-Message-Type');
     show_ajax_message(msg, type); //use whatever popup, notification or whatever plugin you want
 
 });
+
+$(document).ready(function () {
+        $("body").on("click", '.pag-ajax .pagination a', function(e){
+          e.preventDefault();
+          $.getScript(this.href);
+          return false;
+        });
+      });
+$('.pag-ajax').click(function(){
+  $(this).show()
+})

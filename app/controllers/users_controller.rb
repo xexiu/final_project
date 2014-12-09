@@ -1,21 +1,22 @@
 class UsersController < ApplicationController
   layout 'layout_profiles'
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
   attr_accessor :name, :email
 
   def index
     @users = User.all
-    @users = User.where(activated: true).paginate(page: params[:page], :per_page => 20)
+    @users = User.where(activated: true).paginate(page: params[:page], :per_page => 5)
     @user = current_user
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page], :per_page => 10)
     @entries_pos = @user.find_up_voted_items
     @entries_neg = @user.find_down_voted_items
-    @entries = @user.entries.order(created_at: :desc).paginate(page: params[:page],  :per_page => 10)
+    @entries = @user.entries.order(created_at: :desc).paginate(page: params[:page], :per_page => 5)
     redirect_to root_url and return unless true
     # debugger
   end
@@ -62,8 +63,20 @@ class UsersController < ApplicationController
       format.json { head :no_content }
       format.js
     end
-    # flash[:success] = "User deleted"
-    # redirect_to users_url # Users index
+  end
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page], :per_page => 10)
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page], :per_page => 5)
+    render 'show_follow'
   end
 
   private
