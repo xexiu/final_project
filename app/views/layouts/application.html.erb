@@ -24,11 +24,6 @@
   <%= render 'layouts/footer' %>
   <%= render 'layouts/ie9_fix' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <style>
-    #notice {
-      display: block;
-    }
-  </style>
   <script>
     $(".alert-success").delay(5000).fadeOut("slow");
     $(function () {
@@ -40,6 +35,20 @@
       if (size_in_megabytes > 2) {
         document.write('<div class="alert alert-danger">Maximum file size is 2MB. Please choose a smaller file.</div>');
       }
+    });
+
+    /* Char Count */
+    var text_max = 800;
+    $('.char-count').html(text_max);
+    $('#textarea').keyup(function() {
+        var text_length = $('#textarea').val().length;
+        var text_remaining = text_max - text_length;
+        $('.char-count').html(text_remaining);
+        if(text_remaining <= 100) {
+        $('.char-count').addClass("btn-red");
+        } else {
+          $('.char-count').removeClass("btn-red");
+        }
     });
   </script>
 </body>
