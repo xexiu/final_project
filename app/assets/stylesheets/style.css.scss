@@ -20,13 +20,11 @@ html {
 
 body.guest {
   min-height: 100%;
-
   position: absolute;
   z-index: 1;
   height: 100%;
   width: 100%;
   overflow: hidden;
-
   font-family: 'Titillium Web', sans-serif;
   font-size: 1em;
   color: black(.7);
@@ -44,7 +42,7 @@ body.guest:before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: #fff url("thumbs-girl.jpg") center center fixed no-repeat;
+  background-image: #fff asset-url("thumbs-girl.jpg") center center fixed no-repeat;
   background-size: cover;
   -webkit-filter: blur(5px);
           filter: blur(5px);
