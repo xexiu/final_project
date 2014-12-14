@@ -12,7 +12,7 @@ class Entry < ActiveRecord::Base
   validates_attachment_size :img, :less_than => 2.megabytes
 
   def self.search(query)
-    where("title like ? OR CAST(id AS text) like ?", "%#{query}%", "%#{query}%") unless Rails.env.production?
+    where("CAST(title as text) like ? OR CAST(id AS text) like ?", "%#{query}%", "%#{query}%") unless Rails.env.production?
   end
 
 end
