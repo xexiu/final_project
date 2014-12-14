@@ -13,7 +13,7 @@ class Entry < ActiveRecord::Base
 
   def self.search(query)
     if Rails.env.production?
-      where("CAST(title as text) like ? OR CAST(id AS text) like ?", "%#{query}%", "%#{query}%")
+      where("CAST(title as text) ilike ? OR CAST(id AS text) ilike ?", "%#{query}%", "%#{query}%")
     else
       where("title like ? OR id like ?", "%#{query}%", "%#{query}%")
     end
