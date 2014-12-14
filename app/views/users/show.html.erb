@@ -59,6 +59,9 @@
       <li>From:<span class="fr">Barcelona (ES)</span></li>
       <li>Age:<span class="fr">22</span></li>
       <li>Gender:<span class="fr">Male</span></li>
+      <% if current_user.admin? && !current_user?(@user) %>
+      <li><%= link_to "Edit user", edit_user_path(@user.id) %></li>
+      <% end %>
     </ul>
     <%= render 'shared/stats' %>
   </div>

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   layout 'layout_profiles'
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :correct_user, :admin_user,   only: [:edit, :update]
+  before_action :admin_user,     only: [:edit, :update, :destroy]
   attr_accessor :name, :email
 
   def index
@@ -88,7 +88,7 @@ class UsersController < ApplicationController
   # Confirms the correct user.
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user?(@user) || current_user.admin
   end
 
   # Confirms an admin user.
