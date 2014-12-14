@@ -1,18 +1,18 @@
-@import "reset";
-@import "utility";
-@import "variables";
-@import "mixins";
-@import "functions";
-@import "fonts";
-@import "form_search";
-@import "form_sign";
-@import "buttons";
-@import "alerts";
-@import "dropdowns";
-@import "pagination";
-@import "budgets";
-@import 'header';
-@import 'footer';
+@import "reset.css";
+@import "utility.css";
+@import "variables.css";
+@import "mixins.css";
+@import "functions.css";
+@import "fonts.css";
+@import "form_search.css";
+@import "form_sign.css";
+@import "buttons.css";
+@import "alerts.css";
+@import "dropdowns.css";
+@import "pagination.css";
+@import "budgets.css";
+@import 'header.css';
+@import 'footer.css';
 
 html {
   height: 100%;
@@ -42,7 +42,7 @@ body.guest:before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: #fff asset-url("thumbs-girl.jpg") center center fixed no-repeat;
+  background: #fff asset-url("thumbs-girl.jpg") center center fixed no-repeat;
   background-size: cover;
   -webkit-filter: blur(5px);
           filter: blur(5px);
