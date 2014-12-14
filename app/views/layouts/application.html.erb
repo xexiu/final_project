@@ -50,6 +50,17 @@
           $('.char-count').removeClass("btn-red");
         }
     });
+
+    /* Fix header dropdown Menu */
+    $('.dropdown, .dropdown-menu').click(function(e){
+      $('.dropdown-menu').show();
+      e.stopPropagation();
+    });
+    $(document).click(function(e) {
+      e.stopPropagation();
+      $('.dropdown-menu').hide();
+    });
+
   </script>
 </body>
 </html>
