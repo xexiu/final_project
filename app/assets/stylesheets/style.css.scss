@@ -1,24 +1,25 @@
-@import "reset.css";
-@import "utility.css";
-@import "variables.css";
-@import "mixins.css";
-@import "functions.css";
-@import "fonts.css";
-@import "form_search.css";
-@import "form_sign.css";
-@import "buttons.css";
-@import "alerts.css";
-@import "dropdowns.css";
-@import "pagination.css";
-@import "budgets.css";
-@import 'header.css';
-@import 'footer.css';
+@import "reset";
+@import "utility";
+@import "variables";
+@import "mixins";
+@import "functions";
+@import "fonts";
+@import "form_search";
+@import "form_sign";
+@import "buttons";
+@import "alerts";
+@import "dropdowns";
+@import "pagination";
+@import "budgets";
+@import 'header';
+@import 'footer';
 
 html {
   height: 100%;
 }
 
 body.guest {
+  @include letterpress(.4);
   min-height: 100%;
   position: absolute;
   z-index: 1;

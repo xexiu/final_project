@@ -1,10 +1,10 @@
-@mixin box-emboss($opacity, $opacity2){
+@mixin box-emboss($opacity, $opacity2) {
     box-shadow: white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
 }
-@mixin letterpress($opacity){
+@mixin letterpress($opacity) {
     text-shadow: white($opacity) 0 1px 0;
 }
-@mixin hide-text{
+@mixin hide-text {
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
