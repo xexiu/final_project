@@ -8,6 +8,9 @@
         <h5 class="title-entry"><%= @entry.title %>
         </h5>
         <span class="timestamp-show">
+          <% if current_user.admin? && !current_user?(@user) %>
+          <%= link_to 'Edit Entry', edit_entry_path %> |
+          <% end %>
           Posted <%= time_ago_in_words(@entry.created_at) %> ago.
         </span>
         <p class="mini-desc-entry-show"><%= @entry.content %></p>

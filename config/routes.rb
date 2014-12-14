@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   # get 'entries' => 'entries#index'
-  resources :entries,  only: [:index, :show, :new, :create, :destroy] do
+  resources :entries,  only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
       put 'like', to: 'entries#upvote'
       put 'dislike', to: 'entries#downvote'

@@ -2,8 +2,8 @@ class EntriesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   # Allow the current user to delete his OWN entry
   # before_action :correct_user,   only: :destroy
-
   # Allow admins to delete all entries
+  before_action :admin_user,     only: [:edit, :update, :destroy]
 
   def index
     if params[:search]
@@ -29,6 +29,20 @@ class EntriesController < ApplicationController
     else
       render 'new'
       flash[:error] = "Oops! Errors found!"
+    end
+  end
+
+  def edit
+    @entry = Entry.find(params[:id])
+  end
+
+  def update
+    @entry = Entry.find(params[:id])
+    if @entry.update_attributes(entry_params)
+      flash[:success] = "Entry updated"
+      redirect_to @entry
+    else
+      render 'edit'
     end
   end
 
@@ -98,4 +112,10 @@ class EntriesController < ApplicationController
       # @entry = current_user.microposts.find_by(id: params[:id])
       # redirect_to root_url if @entry.nil?
   # end
+
+  # Confirms an admin user.
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
+
 end
