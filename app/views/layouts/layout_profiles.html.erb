@@ -33,9 +33,8 @@
     })
 
     /* Fix header dropdown Menu */
-    $('.dropdown, .dropdown-menu').click(function(e){
+    $('.dropdown').click(function(){
       $('.dropdown-menu').show();
-      e.stopPropagation();
     });
     $(document).click(function(e) {
       e.stopPropagation();
